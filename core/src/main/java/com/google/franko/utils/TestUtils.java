@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.utils;
+package com.google.franko.utils;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.store.BlockStore;
-import com.google.digitalcoin.store.BlockStoreException;
+import com.google.franko.core.*;
+import com.google.franko.store.BlockStore;
+import com.google.franko.store.BlockStoreException;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

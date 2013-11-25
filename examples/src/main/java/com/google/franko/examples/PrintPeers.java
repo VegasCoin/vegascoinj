@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.examples;
+package com.google.franko.examples;
 
-import com.google.digitalcoin.core.NetworkParameters;
-import com.google.digitalcoin.core.TCPNetworkConnection;
-import com.google.digitalcoin.core.VersionMessage;
-import com.google.digitalcoin.discovery.DnsDiscovery;
-import com.google.digitalcoin.discovery.PeerDiscoveryException;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.utils.BriefLogFormatter;
+import com.google.franko.core.NetworkParameters;
+import com.google.franko.core.TCPNetworkConnection;
+import com.google.franko.core.VersionMessage;
+import com.google.franko.discovery.DnsDiscovery;
+import com.google.franko.discovery.PeerDiscoveryException;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.utils.BriefLogFormatter;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;

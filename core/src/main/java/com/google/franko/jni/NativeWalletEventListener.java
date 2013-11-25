@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.jni;
+package com.google.franko.jni;
 
-import com.google.digitalcoin.core.ECKey;
-import com.google.digitalcoin.core.Transaction;
-import com.google.digitalcoin.core.Wallet;
-import com.google.digitalcoin.core.WalletEventListener;
+import com.google.franko.core.ECKey;
+import com.google.franko.core.Transaction;
+import com.google.franko.core.Wallet;
+import com.google.franko.core.WalletEventListener;
 
 import java.math.BigInteger;
 import java.util.List;

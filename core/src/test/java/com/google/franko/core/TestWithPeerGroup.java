@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.store.BlockStore;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.store.BlockStore;
 import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.channel.*;
 

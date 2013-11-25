@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 /**
  * <p>An object implementing this interface can be added to a {@link Wallet} and provide arbitrary byte arrays that will

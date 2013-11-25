@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.jni;
+package com.google.franko.jni;
 
-import com.google.digitalcoin.core.*;
+import com.google.franko.core.*;
 
 import java.util.List;
 

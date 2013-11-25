@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.script;
+package com.google.franko.script;
 
-import com.google.digitalcoin.core.Utils;
+import com.google.franko.core.Utils;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
-import static com.google.digitalcoin.script.ScriptOpCodes.OP_PUSHDATA1;
-import static com.google.digitalcoin.script.ScriptOpCodes.OP_PUSHDATA2;
-import static com.google.digitalcoin.script.ScriptOpCodes.OP_PUSHDATA4;
+import static com.google.franko.script.ScriptOpCodes.OP_PUSHDATA1;
+import static com.google.franko.script.ScriptOpCodes.OP_PUSHDATA2;
+import static com.google.franko.script.ScriptOpCodes.OP_PUSHDATA4;
 import static com.google.common.base.Preconditions.checkState;
 
 /**

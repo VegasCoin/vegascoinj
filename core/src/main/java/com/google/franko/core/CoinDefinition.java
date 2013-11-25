@@ -1,4 +1,4 @@
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 import java.math.BigInteger;
 import java.util.Date;
@@ -15,17 +15,17 @@ import java.util.Vector;
 public class CoinDefinition {
 
 
-    public static final String coinName = "digitalcoin";
+    public static final String coinName = "Franko";
     public static final String coinTicker = "DGC";
-    public static final String coinURIScheme = "digitalcoin";
+    public static final String coinURIScheme = "franko";
     public static final String cryptsyMarketId = "26";
     public static final String cryptsyMarketCurrency = "BTC";
 
 
-    public static final String BLOCKEXPLORER_BASE_URL_PROD = "http://dgc.cryptocoinexplorer.com/";
-    public static final String BLOCKEXPLORER_BASE_URL_TEST = "http://dgc.cryptocoinexplorer.com/";
+    public static final String BLOCKEXPLORER_BASE_URL_PROD = "http://frk.cryptocoinexplorer.com/";
+    public static final String BLOCKEXPLORER_BASE_URL_TEST = "http://frk.cryptocoinexplorer.com/";
 
-    public static final String DONATION_ADDRESS = "DPdbL3n3Y3ypwVEvY3wABmpbjsd3AVqm5M";  //HashEngineering donation DGC address
+    public static final String DONATION_ADDRESS = "F85ytB5qH87aHskpauQi6YWdRZPQgNubX4";  //HashEngineering donation DGC address
 
     enum CoinHash {
         SHA256,
@@ -95,7 +95,7 @@ public class CoinDefinition {
             "dgc.kadaplace.com",
 
             "50.116.22.43",                           //dgc.cryptocoinexplorer.com
-            //"dnsseed.digitalcoin.co",
+            //"dnsseed.franko.co",
             //"dnsseed.rc.altcointech.net"
             //"88.161.131.83",
             //"98.253.19.158" ,
@@ -113,7 +113,7 @@ public class CoinDefinition {
     };
 
     //
-    // TestNet - digitalcoin - not tested
+    // TestNet - Franko - not tested
     //
     public static final int testnetAddressHeader = 111;             //base58.h CBitcoinAddress::PUBKEY_ADDRESS_TEST
     public static final long testnetPacketMagic = 0xfcc1b7dc;      //0xfc, 0xc1, 0xb7, 0xdc
@@ -181,7 +181,7 @@ public class CoinDefinition {
 
     public static int subsidyDecreaseBlockCount = 4730400;     //main.cpp GetBlockValue(height, fee)
 
-    public static BigInteger proofOfWorkLimit = Utils.decodeCompactBits(0x1e0fffffL);  //main.cpp bnProofOfWorkLimit (~uint256(0) >> 20); // digitalcoin: starting difficulty is 1 / 2^12
+    public static BigInteger proofOfWorkLimit = Utils.decodeCompactBits(0x1e0fffffL);  //main.cpp bnProofOfWorkLimit (~uint256(0) >> 20); // Franko: starting difficulty is 1 / 2^12
 
     static public String[] testnetDnsSeeds = new String[] {
           "not supported"
@@ -190,11 +190,11 @@ public class CoinDefinition {
     public static final String SATOSHI_KEY = "04A9CFD81AF5D53310BE45E6326E706A542B1028DF85D2819D5DE496D8816C83129CE874FE5E3A23B03544BFF35458833779DAB7A6FF687525A4E23CA59F1E2B94";
 
     /** The string returned by getId() for the main, production network where people trade things. */
-    public static final String ID_MAINNET = "org.digitalcoin.production";
+    public static final String ID_MAINNET = "org.franko.production";
     /** The string returned by getId() for the testnet. */
-    public static final String ID_TESTNET = "org.digitalcoin.test";
+    public static final String ID_TESTNET = "org.franko.test";
     /** Unit test network. */
-    public static final String ID_UNITTESTNET = "com.google.digitalcoin.unittest";
+    public static final String ID_UNITTESTNET = "com.google.franko.unittest";
 
     //checkpoints.cpp Checkpoints::mapCheckpoints
     public static void initCheckpoints(Map<Integer, Sha256Hash> checkpoints)

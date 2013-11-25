@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
-import com.google.digitalcoin.core.Base58;
-import com.google.digitalcoin.core.ECKey;
-import com.google.digitalcoin.core.Utils;
+import com.google.franko.core.Base58;
+import com.google.franko.core.ECKey;
+import com.google.franko.core.Utils;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;

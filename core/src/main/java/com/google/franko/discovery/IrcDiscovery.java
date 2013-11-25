@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.discovery;
+package com.google.franko.discovery;
 
-import com.google.digitalcoin.core.AddressFormatException;
-import com.google.digitalcoin.core.Base58;
-import com.google.digitalcoin.core.Utils;
+import com.google.franko.core.AddressFormatException;
+import com.google.franko.core.Base58;
+import com.google.franko.core.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -121,7 +121,7 @@ public class IrcDiscovery implements PeerDiscovery {
             reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
 
             // Generate a random nick for the connection. This is chosen to be clearly identifiable as coming from
-            // digitalcoinj but not match the standard nick format, so full peers don't try and connect to us.
+            // frankoj but not match the standard nick format, so full peers don't try and connect to us.
             String nickRnd = String.format("bcj%d", new Random().nextInt(Integer.MAX_VALUE));
             String command = "NICK " + nickRnd;
             logAndSend(command);

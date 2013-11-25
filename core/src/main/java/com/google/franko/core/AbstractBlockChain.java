@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.store.BlockStore;
-import com.google.digitalcoin.store.BlockStoreException;
-import com.google.digitalcoin.utils.ListenerRegistration;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.store.BlockStore;
+import com.google.franko.store.BlockStoreException;
+import com.google.franko.utils.ListenerRegistration;
+import com.google.franko.utils.Threading;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
@@ -46,7 +46,7 @@ import static java.lang.String.format;
  * <p>An AbstractBlockChain implementation must be connected to a {@link BlockStore} implementation. The chain object
  * by itself doesn't store any data, that's delegated to the store. Which store you use is a decision best made by
  * reading the getting started guide, but briefly, fully validating block chains need fully validating stores. In
- * the lightweight SPV mode, a {@link com.google.digitalcoin.store.SPVBlockStore} is the right choice.</p>
+ * the lightweight SPV mode, a {@link com.google.franko.store.SPVBlockStore} is the right choice.</p>
  *
  * <p>This class implements an abstract class which makes it simple to create a BlockChain that does/doesn't do full
  * verification.  It verifies headers and is implements most of what is required to implement SPV mode, but
@@ -55,7 +55,7 @@ import static java.lang.String.format;
  * <p>There are two subclasses of AbstractBlockChain that are useful: {@link BlockChain}, which is the simplest
  * class and implements <i>simplified payment verification</i>. This is a lightweight and efficient mode that does
  * not verify the contents of blocks, just their headers. A {@link FullPrunedBlockChain} paired with a
- * {@link com.google.digitalcoin.store.H2FullPrunedBlockStore} implements full verification, which is equivalent to the
+ * {@link com.google.franko.store.H2FullPrunedBlockStore} implements full verification, which is equivalent to the
  * original Satoshi client. To learn more about the alternative security models, please consult the articles on the
  * website.</p>
  *
@@ -840,7 +840,7 @@ public abstract class AbstractBlockChain {
         int nActualTimespanMax = fNewDifficultyProtocol? (nTargetTimespanCurrent*2) : (nTargetTimespanCurrent*4);
         int nActualTimespanMin = fNewDifficultyProtocol? (nTargetTimespanCurrent/2) : (nTargetTimespanCurrent/4);
 
-        //new for v1.0 - POSSIBLE BUG in digitalcoin client   - this is not used
+        //new for v1.0 - POSSIBLE BUG in Franko client   - this is not used
         //if (fInflationFixProtocol){
         //   nActualTimespanMax = ((nTargetTimespanCurrent*75)/55);
         //    nActualTimespanMin = ((nTargetTimespanCurrent*55)/75);

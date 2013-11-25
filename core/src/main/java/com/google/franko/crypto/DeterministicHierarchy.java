@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;

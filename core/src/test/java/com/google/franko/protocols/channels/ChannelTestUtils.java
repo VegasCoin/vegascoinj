@@ -1,10 +1,10 @@
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.Sha256Hash;
-import com.google.digitalcoin.core.TransactionBroadcaster;
-import com.google.digitalcoin.core.Utils;
-import com.google.digitalcoin.core.Wallet;
-import org.digitalcoin.paymentchannel.Protos;
+import com.google.franko.core.Sha256Hash;
+import com.google.franko.core.TransactionBroadcaster;
+import com.google.franko.core.Utils;
+import com.google.franko.core.Wallet;
+import org.franko.paymentchannel.Protos;
 
 import java.math.BigInteger;
 import java.util.concurrent.BlockingQueue;

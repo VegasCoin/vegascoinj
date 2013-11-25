@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.script;
+package com.google.franko.script;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.params.TestNet3Params;
+import com.google.franko.core.*;
+import com.google.franko.params.TestNet3Params;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 import org.spongycastle.util.encoders.Hex;
@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
-import static com.google.digitalcoin.script.ScriptOpCodes.OP_INVALIDOPCODE;
+import static com.google.franko.script.ScriptOpCodes.OP_INVALIDOPCODE;
 import static org.junit.Assert.*;
 
 public class ScriptTest {

@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.examples;
+package com.google.franko.examples;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.crypto.KeyCrypterException;
-import com.google.digitalcoin.kits.WalletAppKit;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.RegTestParams;
-import com.google.digitalcoin.params.TestNet3Params;
-import com.google.digitalcoin.utils.BriefLogFormatter;
+import com.google.franko.core.*;
+import com.google.franko.crypto.KeyCrypterException;
+import com.google.franko.kits.WalletAppKit;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.RegTestParams;
+import com.google.franko.params.TestNet3Params;
+import com.google.franko.utils.BriefLogFormatter;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -80,7 +80,7 @@ public class ForwardingService {
         kit.wallet().addEventListener(new AbstractWalletEventListener() {
             @Override
             public void onCoinsReceived(Wallet w, Transaction tx, BigInteger prevBalance, BigInteger newBalance) {
-                // Runs in the dedicated "user thread" (see digitalcoinj docs for more info on this).
+                // Runs in the dedicated "user thread" (see frankoj docs for more info on this).
                 //
                 // The transaction "tx" can either be pending, or included into a block (we didn't see the broadcast).
                 BigInteger value = tx.getValueSentToMe(w);

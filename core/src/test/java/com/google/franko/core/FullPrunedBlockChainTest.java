@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.store.FullPrunedBlockStore;
-import com.google.digitalcoin.store.MemoryFullPrunedBlockStore;
-import com.google.digitalcoin.utils.BlockFileLoader;
-import com.google.digitalcoin.utils.BriefLogFormatter;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.script.Script;
+import com.google.franko.store.FullPrunedBlockStore;
+import com.google.franko.store.MemoryFullPrunedBlockStore;
+import com.google.franko.utils.BlockFileLoader;
+import com.google.franko.utils.BriefLogFormatter;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;

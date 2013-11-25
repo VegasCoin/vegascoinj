@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.TestNet2Params;
-import com.google.digitalcoin.params.TestNet3Params;
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.script.ScriptOpCodes;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.TestNet2Params;
+import com.google.franko.params.TestNet3Params;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.script.Script;
+import com.google.franko.script.ScriptOpCodes;
 import com.google.common.base.Objects;
 import org.spongycastle.util.encoders.Hex;
 
@@ -31,7 +31,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.google.digitalcoin.core.Utils.COIN;
+import static com.google.franko.core.Utils.COIN;
 
 /**
  * <p>NetworkParameters contains the data needed for working with an instantiation of a Bitcoin chain.</p>
@@ -53,11 +53,11 @@ public abstract class NetworkParameters implements Serializable {
     public static final byte[] SATOSHI_KEY = Hex.decode("04fc9702847840aaf195de8442ebecedf5b095cdbb9bc716bda9110971b28a49e0ead8564ff0db22209e0374782c093bb899692d524e9d6a6956e7c5ecbcd68284");
 
     /** The string returned by getId() for the main, production network where people trade things. */
-    public static final String ID_MAINNET = CoinDefinition.ID_MAINNET; //"org.digitalcoin.production";
+    public static final String ID_MAINNET = CoinDefinition.ID_MAINNET; //"org.franko.production";
     /** The string returned by getId() for the testnet. */
-    public static final String ID_TESTNET = CoinDefinition.ID_TESTNET; //"org.digitalcoin.test";
+    public static final String ID_TESTNET = CoinDefinition.ID_TESTNET; //"org.franko.test";
     /** Unit test network. */
-    public static final String ID_UNITTESTNET = CoinDefinition.ID_UNITTESTNET; //"com.google.digitalcoin.unittest";
+    public static final String ID_UNITTESTNET = CoinDefinition.ID_UNITTESTNET; //"com.google.franko.unittest";
 
     // TODO: Seed nodes should be here as well.
 
@@ -272,7 +272,7 @@ public abstract class NetworkParameters implements Serializable {
     }
 
     /**
-     * First byte of a base58 encoded address. See {@link com.google.digitalcoin.core.Address}. This is the same as acceptableAddressCodes[0] and
+     * First byte of a base58 encoded address. See {@link com.google.franko.core.Address}. This is the same as acceptableAddressCodes[0] and
      * is the one used for "normal" addresses. Other types of address may be encountered with version codes found in
      * the acceptableAddressCodes array.
      */
@@ -280,7 +280,7 @@ public abstract class NetworkParameters implements Serializable {
         return addressHeader;
     }
 
-    /** First byte of a base58 encoded dumped private key. See {@link com.google.digitalcoin.core.DumpedPrivateKey}. */
+    /** First byte of a base58 encoded dumped private key. See {@link com.google.franko.core.DumpedPrivateKey}. */
     public int getDumpedPrivateKeyHeader() {
         return dumpedPrivateKeyHeader;
     }
@@ -321,7 +321,7 @@ public abstract class NetworkParameters implements Serializable {
     }
 
     /**
-     * The key used to sign {@link com.google.digitalcoin.core.AlertMessage}s. You can use {@link com.google.digitalcoin.core.ECKey#verify(byte[], byte[], byte[])} to verify
+     * The key used to sign {@link com.google.franko.core.AlertMessage}s. You can use {@link com.google.franko.core.ECKey#verify(byte[], byte[], byte[])} to verify
      * signatures using it.
      */
     public byte[] getAlertSigningKey() {

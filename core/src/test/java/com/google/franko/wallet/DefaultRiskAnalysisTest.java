@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.wallet;
+package com.google.franko.wallet;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.params.UnitTestParams;
+import com.google.franko.core.*;
+import com.google.franko.params.UnitTestParams;
 import com.google.common.collect.ImmutableList;
 import org.junit.Before;
 import org.junit.Test;

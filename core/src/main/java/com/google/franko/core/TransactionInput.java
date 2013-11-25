@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.script.Script;
+import com.google.franko.script.Script;
 import com.google.common.base.Preconditions;
 
 import java.io.IOException;

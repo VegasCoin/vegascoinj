@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.store;
+package com.google.franko.store;
 
-import com.google.digitalcoin.core.Sha256Hash;
-import com.google.digitalcoin.core.StoredBlock;
+import com.google.franko.core.Sha256Hash;
+import com.google.franko.core.StoredBlock;
 
 /**
  * An implementor of BlockStore saves StoredBlock objects to disk. Different implementations store them in
@@ -45,8 +45,8 @@ public interface BlockStore {
 
     /**
      * Returns the {@link StoredBlock} that represents the top of the chain of greatest total work. Note that this
-     * can be arbitrarily expensive, you probably should use {@link com.google.digitalcoin.core.BlockChain#getChainHead()}
-     * or perhaps {@link com.google.digitalcoin.core.BlockChain#getBestChainHeight()} which will run in constant time and
+     * can be arbitrarily expensive, you probably should use {@link com.google.franko.core.BlockChain#getChainHead()}
+     * or perhaps {@link com.google.franko.core.BlockChain#getBestChainHeight()} which will run in constant time and
      * not take any heavyweight locks.
      */
     StoredBlock getChainHead() throws BlockStoreException;

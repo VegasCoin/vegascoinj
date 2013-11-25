@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 import com.google.common.primitives.UnsignedInteger;
 
-import static com.google.digitalcoin.core.Utils.isLessThanUnsigned;
+import static com.google.franko.core.Utils.isLessThanUnsigned;
 
 /**
  * A variable-length encoded integer using Satoshis encoding.

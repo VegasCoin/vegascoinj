@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.store;
+package com.google.franko.store;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.core.TransactionConfidence.ConfidenceType;
-import com.google.digitalcoin.crypto.EncryptedPrivateKey;
-import com.google.digitalcoin.crypto.KeyCrypter;
-import com.google.digitalcoin.crypto.KeyCrypterScrypt;
+import com.google.franko.core.*;
+import com.google.franko.core.TransactionConfidence.ConfidenceType;
+import com.google.franko.crypto.EncryptedPrivateKey;
+import com.google.franko.crypto.KeyCrypter;
+import com.google.franko.crypto.KeyCrypterScrypt;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.TextFormat;
-import org.digitalcoinj.wallet.Protos;
-import org.digitalcoinj.wallet.Protos.Wallet.EncryptionType;
+import org.frankoj.wallet.Protos;
+import org.frankoj.wallet.Protos.Wallet.EncryptionType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,7 +47,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * a data interchange format developed by Google with an efficient binary representation, a type safe specification
  * language and compilers that generate code to work with those data structures for many languages. Protocol buffers
  * can have their format evolved over time: conceptually they represent data using (tag, length, value) tuples. The
- * format is defined by the <tt>bitcoin.proto</tt> file in the digitalcoinj source distribution.<p>
+ * format is defined by the <tt>bitcoin.proto</tt> file in the frankoj source distribution.<p>
  *
  * This class is used through its static methods. The most common operations are writeWallet and readWallet, which do
  * the obvious operations on Output/InputStreams. You can use a {@link java.io.ByteArrayInputStream} and equivalent
@@ -536,7 +536,7 @@ public class WalletProtobufSerializer {
         txMap.put(txProto.getHash(), tx);
     }
 
-    private WalletTransaction connectTransactionOutputs(org.digitalcoinj.wallet.Protos.Transaction txProto) throws UnreadableWalletException {
+    private WalletTransaction connectTransactionOutputs(org.frankoj.wallet.Protos.Transaction txProto) throws UnreadableWalletException {
         Transaction tx = txMap.get(txProto.getHash());
         WalletTransaction.Pool pool = WalletTransaction.Pool.valueOf(txProto.getPool().getNumber());
         if (pool == WalletTransaction.Pool.INACTIVE || pool == WalletTransaction.Pool.PENDING_INACTIVE) {

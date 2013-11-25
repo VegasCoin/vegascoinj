@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
 /**
  * <p>This is just a wrapper for the i (child number) as per BIP 32 with a boolean getter for the first bit and a getter

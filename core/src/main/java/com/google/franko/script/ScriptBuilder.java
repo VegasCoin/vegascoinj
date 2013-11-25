@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.script;
+package com.google.franko.script;
 
-import com.google.digitalcoin.core.Address;
-import com.google.digitalcoin.core.ECKey;
-import com.google.digitalcoin.crypto.TransactionSignature;
+import com.google.franko.core.Address;
+import com.google.franko.core.ECKey;
+import com.google.franko.crypto.TransactionSignature;
 import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.google.digitalcoin.script.ScriptOpCodes.*;
+import static com.google.franko.script.ScriptOpCodes.*;
 import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * <p>Tools for the construction of commonly used script types. You don't normally need this as it's hidden behind
- * convenience methods on {@link com.google.digitalcoin.core.Transaction}, but they are useful when working with the
+ * convenience methods on {@link com.google.franko.core.Transaction}, but they are useful when working with the
  * protocol at a lower level.</p>
  */
 public class ScriptBuilder {

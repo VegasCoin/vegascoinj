@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigInteger;
 
-import static com.google.digitalcoin.core.Utils.*;
+import static com.google.franko.core.Utils.*;
 import static org.junit.Assert.*;
 
 public class UtilsTest {

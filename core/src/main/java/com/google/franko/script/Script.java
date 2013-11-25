@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.script;
+package com.google.franko.script;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.crypto.TransactionSignature;
+import com.google.franko.core.*;
+import com.google.franko.crypto.TransactionSignature;
 import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,8 +33,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
-import static com.google.digitalcoin.script.ScriptOpCodes.*;
-import static com.google.digitalcoin.core.Utils.bytesToHexString;
+import static com.google.franko.script.ScriptOpCodes.*;
+import static com.google.franko.core.Utils.bytesToHexString;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
 
@@ -414,7 +414,7 @@ public class Script {
      * correctly are considered valid, but won't be mined upon, so they'll be rapidly re-orgd out of the chain. This
      * logic is defined by <a href="https://en.bitcoin.it/wiki/BIP_0016">BIP 16</a>.</p>
      *
-     * <p>digitalcoinj does not support creation of P2SH transactions today. The goal of P2SH is to allow short addresses
+     * <p>frankoj does not support creation of P2SH transactions today. The goal of P2SH is to allow short addresses
      * even for complex scripts (eg, multi-sig outputs) so they are convenient to work with in things like QRcodes or
      * with copy/paste, and also to minimize the size of the unspent output set (which improves performance of the
      * Bitcoin system).</p>

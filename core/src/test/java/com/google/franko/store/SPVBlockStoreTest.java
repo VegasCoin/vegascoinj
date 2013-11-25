@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.store;
+package com.google.franko.store;
 
-import com.google.digitalcoin.core.Address;
-import com.google.digitalcoin.core.ECKey;
-import com.google.digitalcoin.core.NetworkParameters;
-import com.google.digitalcoin.core.StoredBlock;
-import com.google.digitalcoin.params.UnitTestParams;
+import com.google.franko.core.Address;
+import com.google.franko.core.ECKey;
+import com.google.franko.core.NetworkParameters;
+import com.google.franko.core.StoredBlock;
+import com.google.franko.params.UnitTestParams;
 import org.junit.Test;
 
 import java.io.File;

@@ -1,8 +1,8 @@
-package com.google.digitalcoin.jni;
+package com.google.franko.jni;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.protocols.channels.PaymentChannelCloseException;
-import com.google.digitalcoin.protocols.channels.ServerConnectionEventHandler;
+import com.google.franko.core.*;
+import com.google.franko.protocols.channels.PaymentChannelCloseException;
+import com.google.franko.protocols.channels.ServerConnectionEventHandler;
 
 import java.math.BigInteger;
 

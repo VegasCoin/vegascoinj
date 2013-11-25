@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 public class UnknownMessage extends EmptyMessage {
     private static final long serialVersionUID = 3614705938207918775L;

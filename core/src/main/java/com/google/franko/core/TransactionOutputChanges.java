@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 import java.io.IOException;
 import java.io.InputStream;

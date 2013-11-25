@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.store.BlockStore;
-import com.google.digitalcoin.store.BlockStoreException;
+import com.google.franko.store.BlockStore;
+import com.google.franko.store.BlockStoreException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +37,8 @@ public class BlockChain extends AbstractBlockChain {
      * one from scratch, or you can deserialize a saved wallet from disk using {@link Wallet#loadFromFile(java.io.File)}
      * </p>
      *
-     * <p>For the store, you should use {@link com.google.digitalcoin.store.SPVBlockStore} or you could also try a
-     * {@link com.google.digitalcoin.store.MemoryBlockStore} if you want to hold all headers in RAM and don't care about
+     * <p>For the store, you should use {@link com.google.franko.store.SPVBlockStore} or you could also try a
+     * {@link com.google.franko.store.MemoryBlockStore} if you want to hold all headers in RAM and don't care about
      * disk serialization (this is rare).</p>
      */
     public BlockChain(NetworkParameters params, Wallet wallet, BlockStore blockStore) throws BlockStoreException {

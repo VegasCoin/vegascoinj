@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.niowrapper;
+package com.google.franko.protocols.niowrapper;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.google.digitalcoin.core.Utils;
+import com.google.franko.core.Utils;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
-import org.digitalcoin.paymentchannel.Protos;
+import org.franko.paymentchannel.Protos;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

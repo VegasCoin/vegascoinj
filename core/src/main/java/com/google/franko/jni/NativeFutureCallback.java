@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.jni;
+package com.google.franko.jni;
 
 import com.google.common.util.concurrent.FutureCallback;
 

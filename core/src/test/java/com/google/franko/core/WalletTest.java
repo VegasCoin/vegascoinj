@@ -14,28 +14,28 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.core.Transaction.SigHash;
-import com.google.digitalcoin.core.Wallet.SendRequest;
-import com.google.digitalcoin.core.WalletTransaction.Pool;
-import com.google.digitalcoin.crypto.KeyCrypter;
-import com.google.digitalcoin.crypto.KeyCrypterException;
-import com.google.digitalcoin.crypto.KeyCrypterScrypt;
-import com.google.digitalcoin.crypto.TransactionSignature;
-import com.google.digitalcoin.store.WalletProtobufSerializer;
-import com.google.digitalcoin.utils.MockTransactionBroadcaster;
-import com.google.digitalcoin.utils.TestUtils;
-import com.google.digitalcoin.utils.TestWithWallet;
-import com.google.digitalcoin.utils.Threading;
-import com.google.digitalcoin.wallet.KeyTimeCoinSelector;
-import com.google.digitalcoin.wallet.WalletFiles;
+import com.google.franko.core.Transaction.SigHash;
+import com.google.franko.core.Wallet.SendRequest;
+import com.google.franko.core.WalletTransaction.Pool;
+import com.google.franko.crypto.KeyCrypter;
+import com.google.franko.crypto.KeyCrypterException;
+import com.google.franko.crypto.KeyCrypterScrypt;
+import com.google.franko.crypto.TransactionSignature;
+import com.google.franko.store.WalletProtobufSerializer;
+import com.google.franko.utils.MockTransactionBroadcaster;
+import com.google.franko.utils.TestUtils;
+import com.google.franko.utils.TestWithWallet;
+import com.google.franko.utils.Threading;
+import com.google.franko.wallet.KeyTimeCoinSelector;
+import com.google.franko.wallet.WalletFiles;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
-import org.digitalcoinj.wallet.Protos;
-import org.digitalcoinj.wallet.Protos.ScryptParameters;
-import org.digitalcoinj.wallet.Protos.Wallet.EncryptionType;
+import org.frankoj.wallet.Protos;
+import org.frankoj.wallet.Protos.ScryptParameters;
+import org.frankoj.wallet.Protos.Wallet.EncryptionType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,8 +53,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-import static com.google.digitalcoin.utils.TestUtils.*;
-import static com.google.digitalcoin.core.Utils.*;
+import static com.google.franko.utils.TestUtils.*;
+import static com.google.franko.core.Utils.*;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import static org.junit.Assert.*;
@@ -939,7 +939,7 @@ public class WalletTest extends TestWithWallet {
     @Test
     public void autosaveImmediate() throws Exception {
         // Test that the wallet will save itself automatically when it changes.
-        File f = File.createTempFile("digitalcoinj-unit-test", null);
+        File f = File.createTempFile("frankoj-unit-test", null);
         Sha256Hash hash1 = Sha256Hash.hashFileContents(f);
         // Start with zero delay and ensure the wallet file changes after adding a key.
         wallet.autosaveToFile(f, 0, TimeUnit.SECONDS, null);
@@ -962,7 +962,7 @@ public class WalletTest extends TestWithWallet {
         // an auto-save cycle of 1 second.
         final File[] results = new File[2];
         final CountDownLatch latch = new CountDownLatch(3);
-        File f = File.createTempFile("digitalcoinj-unit-test", null);
+        File f = File.createTempFile("frankoj-unit-test", null);
         Sha256Hash hash1 = Sha256Hash.hashFileContents(f);
         wallet.autosaveToFile(f, 1, TimeUnit.SECONDS,
                 new WalletFiles.Listener() {

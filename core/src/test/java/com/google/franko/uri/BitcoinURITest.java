@@ -16,12 +16,12 @@
  * 
  */
 
-package com.google.digitalcoin.uri;
+package com.google.franko.uri;
 
-import com.google.digitalcoin.core.Address;
-import com.google.digitalcoin.core.Utils;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.TestNet3Params;
+import com.google.franko.core.Address;
+import com.google.franko.core.Utils;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.TestNet3Params;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;

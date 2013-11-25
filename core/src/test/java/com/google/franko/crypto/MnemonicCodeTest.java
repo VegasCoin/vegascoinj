@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
 import org.junit.Test;
 

@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
-import com.google.digitalcoin.core.Utils;
-import com.google.digitalcoin.utils.BriefLogFormatter;
+import com.google.franko.core.Utils;
+import com.google.franko.utils.BriefLogFormatter;
 import com.google.protobuf.ByteString;
 
-import org.digitalcoinj.wallet.Protos;
-import org.digitalcoinj.wallet.Protos.ScryptParameters;
+import org.frankoj.wallet.Protos;
+import org.frankoj.wallet.Protos.ScryptParameters;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;

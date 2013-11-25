@@ -1,13 +1,13 @@
-package com.google.digitalcoin.wallet;
+package com.google.franko.wallet;
 
-import com.google.digitalcoin.core.TransactionOutput;
+import com.google.franko.core.TransactionOutput;
 
 import java.math.BigInteger;
 import java.util.Collection;
 
 /**
  * Represents the results of a
- * {@link com.google.digitalcoin.wallet.CoinSelector#select(java.math.BigInteger, java.util.LinkedList)} operation. A
+ * {@link com.google.franko.wallet.CoinSelector#select(java.math.BigInteger, java.util.LinkedList)} operation. A
  * coin selection represents a list of spendable transaction outputs that sum together to give valueGathered.
  * Different coin selections could be produced by different coin selectors from the same input set, according
  * to their varying policies.

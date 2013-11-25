@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.core.TransactionConfidence.ConfidenceType;
-import com.google.digitalcoin.crypto.TransactionSignature;
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.script.ScriptBuilder;
-import com.google.digitalcoin.script.ScriptOpCodes;
+import com.google.franko.core.TransactionConfidence.ConfidenceType;
+import com.google.franko.crypto.TransactionSignature;
+import com.google.franko.script.Script;
+import com.google.franko.script.ScriptBuilder;
+import com.google.franko.script.ScriptOpCodes;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import org.slf4j.Logger;
@@ -34,14 +34,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static com.google.digitalcoin.core.Utils.*;
+import static com.google.franko.core.Utils.*;
 
 /**
  * <p>A transaction represents the movement of coins from some addresses to some other addresses. It can also represent
  * the minting of new coins. A Transaction object corresponds to the equivalent in the Bitcoin C++ implementation.</p>
  *
  * <p>Transactions are the fundamental atoms of Bitcoin and have many powerful features. Read
- * <a href="http://code.google.com/p/digitalcoinj/wiki/WorkingWithTransactions">"Working with transactions"</a> in the
+ * <a href="http://code.google.com/p/frankoj/wiki/WorkingWithTransactions">"Working with transactions"</a> in the
  * documentation to learn more about how to use this class.</p>
  *
  * <p>All Bitcoin transactions are at risk of being reversed, though the risk is much less than with traditional payment
@@ -716,7 +716,7 @@ public class Transaction extends ChildMessage implements Serializable {
     }
 
     /**
-     * Same as {@link #addSignedInput(TransactionOutPoint, com.google.digitalcoin.script.Script, ECKey, com.google.digitalcoin.core.Transaction.SigHash, boolean)}
+     * Same as {@link #addSignedInput(TransactionOutPoint, com.google.franko.script.Script, ECKey, com.google.franko.core.Transaction.SigHash, boolean)}
      * but defaults to {@link SigHash#ALL} and "false" for the anyoneCanPay flag. This is normally what you want.
      */
     public TransactionInput addSignedInput(TransactionOutPoint prevOut, Script scriptPubKey, ECKey sigKey) throws ScriptException {
@@ -876,7 +876,7 @@ public class Transaction extends ChildMessage implements Serializable {
 
     /**
      * Calculates a signature that is valid for being inserted into the input at the given position. This is simply
-     * a wrapper around calling {@link Transaction#hashForSignature(int, byte[], com.google.digitalcoin.core.Transaction.SigHash, boolean)}
+     * a wrapper around calling {@link Transaction#hashForSignature(int, byte[], com.google.franko.core.Transaction.SigHash, boolean)}
      * followed by {@link ECKey#sign(Sha256Hash, org.spongycastle.crypto.params.KeyParameter)} and then returning
      * a new {@link TransactionSignature}.
      *
@@ -897,7 +897,7 @@ public class Transaction extends ChildMessage implements Serializable {
 
     /**
      * Calculates a signature that is valid for being inserted into the input at the given position. This is simply
-     * a wrapper around calling {@link Transaction#hashForSignature(int, byte[], com.google.digitalcoin.core.Transaction.SigHash, boolean)}
+     * a wrapper around calling {@link Transaction#hashForSignature(int, byte[], com.google.franko.core.Transaction.SigHash, boolean)}
      * followed by {@link ECKey#sign(Sha256Hash)} and then returning a new {@link TransactionSignature}.
      *
      * @param inputIndex Which input to calculate the signature for, as an index.

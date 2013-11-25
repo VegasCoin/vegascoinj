@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.store.BlockStore;
-import com.google.digitalcoin.store.BlockStoreException;
-import com.google.digitalcoin.store.FullPrunedBlockStore;
+import com.google.franko.store.BlockStore;
+import com.google.franko.store.BlockStoreException;
+import com.google.franko.store.FullPrunedBlockStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,7 +46,7 @@ import static com.google.common.base.Preconditions.*;
  * </ol>
  *
  * <p>Checkpoints are used by the SPV {@link BlockChain} to initialize fresh
- * {@link com.google.digitalcoin.store.SPVBlockStore}s. They are not used by fully validating mode, which instead has a
+ * {@link com.google.franko.store.SPVBlockStore}s. They are not used by fully validating mode, which instead has a
  * different concept of checkpoints that are used to hard-code the validity of blocks that violate BIP30 (duplicate
  * coinbase transactions). Those "checkpoints" can be found in NetworkParameters.</p>
  *

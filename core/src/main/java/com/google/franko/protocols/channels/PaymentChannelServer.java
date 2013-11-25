@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.protocols.channels.PaymentChannelCloseException.CloseReason;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.core.*;
+import com.google.franko.protocols.channels.PaymentChannelCloseException.CloseReason;
+import com.google.franko.utils.Threading;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.protobuf.ByteString;
 import net.jcip.annotations.GuardedBy;
-import org.digitalcoin.paymentchannel.Protos;
+import org.franko.paymentchannel.Protos;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;

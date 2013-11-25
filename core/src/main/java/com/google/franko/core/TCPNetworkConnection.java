@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
@@ -154,7 +154,7 @@ public class TCPNetworkConnection implements NetworkConnection {
         // Now it's our turn ...
         // Send an ACK message stating we accept the peers protocol version.
         write(channel, new VersionAck());
-        // digitalcoinj is a client mode implementation. That means there's not much point in us talking to other client
+        // frankoj is a client mode implementation. That means there's not much point in us talking to other client
         // mode nodes because we can't download the data from them we need to find/verify transactions. Some bogus
         // implementations claim to have a block chain in their services field but then report a height of zero, filter
         // them out here.

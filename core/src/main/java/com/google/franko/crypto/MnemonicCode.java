@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,7 +32,7 @@ import org.spongycastle.crypto.engines.RijndaelEngine;
 import org.spongycastle.crypto.params.KeyParameter;
 import org.spongycastle.util.encoders.Hex;
 
-import com.google.digitalcoin.core.Sha256Hash;
+import com.google.franko.core.Sha256Hash;
 
 /**
  * A MnemonicCode object may be used to convert between binary seed values and

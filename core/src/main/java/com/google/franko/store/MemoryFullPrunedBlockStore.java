@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.store;
+package com.google.franko.store;
 
-import com.google.digitalcoin.core.*;
+import com.google.franko.core.*;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;

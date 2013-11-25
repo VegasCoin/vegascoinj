@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.store.BlockStoreException;
-import com.google.digitalcoin.store.FullPrunedBlockStore;
+import com.google.franko.script.Script;
+import com.google.franko.store.BlockStoreException;
+import com.google.franko.store.FullPrunedBlockStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,15 +1,15 @@
-package com.google.digitalcoin.store;
+package com.google.franko.store;
 
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.core.TransactionConfidence.ConfidenceType;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.utils.BriefLogFormatter;
-import com.google.digitalcoin.utils.TestUtils;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.core.*;
+import com.google.franko.core.TransactionConfidence.ConfidenceType;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.utils.BriefLogFormatter;
+import com.google.franko.utils.TestUtils;
+import com.google.franko.utils.Threading;
 import com.google.protobuf.ByteString;
-import org.digitalcoinj.wallet.Protos;
+import org.frankoj.wallet.Protos;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
-import static com.google.digitalcoin.utils.TestUtils.createFakeTx;
+import static com.google.franko.utils.TestUtils.createFakeTx;
 import static org.junit.Assert.*;
 
 public class WalletProtobufSerializerTest {

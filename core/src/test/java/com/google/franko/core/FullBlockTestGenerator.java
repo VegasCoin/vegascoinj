@@ -1,8 +1,8 @@
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.core.Transaction.SigHash;
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.script.ScriptBuilder;
+import com.google.franko.core.Transaction.SigHash;
+import com.google.franko.script.Script;
+import com.google.franko.script.ScriptBuilder;
 import com.google.common.base.Preconditions;
 
 import java.io.ByteArrayOutputStream;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.util.*;
 
-import static com.google.digitalcoin.script.ScriptOpCodes.*;
+import static com.google.franko.script.ScriptOpCodes.*;
 
 /**
  * Represents a block which is sent to the tested application and which the application must either reject or accept,

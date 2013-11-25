@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.script.ScriptBuilder;
-import com.google.digitalcoin.utils.TestWithWallet;
+import com.google.franko.core.*;
+import com.google.franko.script.Script;
+import com.google.franko.script.ScriptBuilder;
+import com.google.franko.utils.TestWithWallet;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
@@ -34,8 +34,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import static com.google.digitalcoin.utils.TestUtils.createFakeTx;
-import static com.google.digitalcoin.utils.TestUtils.makeSolvedTestBlock;
+import static com.google.franko.utils.TestUtils.createFakeTx;
+import static com.google.franko.utils.TestUtils.makeSolvedTestBlock;
 import static org.junit.Assert.*;
 
 public class PaymentChannelStateTest extends TestWithWallet {

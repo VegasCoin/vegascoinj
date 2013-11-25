@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 /**
  * Represents the "getaddr" P2P protocol message, which requests network {@link AddressMessage}s from a peer. Not to

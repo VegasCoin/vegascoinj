@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.niowrapper;
+package com.google.franko.protocols.niowrapper;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -23,7 +23,7 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.concurrent.locks.ReentrantLock;
 
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.utils.Threading;
 import org.slf4j.LoggerFactory;
 
 import static com.google.common.base.Preconditions.checkNotNull;

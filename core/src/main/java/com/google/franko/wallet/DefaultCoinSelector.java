@@ -1,16 +1,16 @@
-package com.google.digitalcoin.wallet;
+package com.google.franko.wallet;
 
-import com.google.digitalcoin.core.NetworkParameters;
-import com.google.digitalcoin.core.Transaction;
-import com.google.digitalcoin.core.TransactionConfidence;
-import com.google.digitalcoin.core.TransactionOutput;
+import com.google.franko.core.NetworkParameters;
+import com.google.franko.core.Transaction;
+import com.google.franko.core.TransactionConfidence;
+import com.google.franko.core.TransactionOutput;
 import com.google.common.annotations.VisibleForTesting;
 
 import java.math.BigInteger;
 import java.util.*;
 
 /**
- * This class implements a {@link com.google.digitalcoin.wallet.CoinSelector} which attempts to get the highest priority
+ * This class implements a {@link com.google.franko.wallet.CoinSelector} which attempts to get the highest priority
  * possible. This means that the transaction is the most likely to get confirmed. Note that this means we may end up
  * "spending" more priority than would be required to get the transaction we are creating confirmed.
  */

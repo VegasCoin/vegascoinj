@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
 /**
  * Used when a given value is either too large too afford or too small for the network to accept.

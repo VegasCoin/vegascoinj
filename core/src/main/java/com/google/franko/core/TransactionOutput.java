@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.script.ScriptBuilder;
+import com.google.franko.script.Script;
+import com.google.franko.script.ScriptBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -185,7 +185,7 @@ public class TransactionOutput extends ChildMessage implements Serializable {
      * so we call them "dust outputs" and they're made non standard. The choice of one third is somewhat arbitrary and
      * may change in future.</p>
      *
-     * <p>You probably should use {@link com.google.digitalcoin.core.TransactionOutput#getMinNonDustValue()} which uses
+     * <p>You probably should use {@link com.google.franko.core.TransactionOutput#getMinNonDustValue()} which uses
      * a safe fee-per-kb by default.</p>
      *
      * @param feePerKbRequired The fee required per kilobyte. Note that this is the same as the reference client's -minrelaytxfee * 3

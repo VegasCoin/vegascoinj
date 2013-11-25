@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 /**
  * An interface which provides the information required to properly filter data downloaded from Peers.

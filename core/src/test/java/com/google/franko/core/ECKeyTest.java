@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.crypto.EncryptedPrivateKey;
-import com.google.digitalcoin.crypto.KeyCrypter;
-import com.google.digitalcoin.crypto.KeyCrypterScrypt;
-import com.google.digitalcoin.crypto.TransactionSignature;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.TestNet3Params;
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.utils.BriefLogFormatter;
+import com.google.franko.crypto.EncryptedPrivateKey;
+import com.google.franko.crypto.KeyCrypter;
+import com.google.franko.crypto.KeyCrypterScrypt;
+import com.google.franko.crypto.TransactionSignature;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.TestNet3Params;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.utils.BriefLogFormatter;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
-import org.digitalcoinj.wallet.Protos;
-import org.digitalcoinj.wallet.Protos.ScryptParameters;
+import org.frankoj.wallet.Protos;
+import org.frankoj.wallet.Protos.ScryptParameters;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -50,7 +50,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static com.google.digitalcoin.core.Utils.reverseBytes;
+import static com.google.franko.core.Utils.reverseBytes;
 import static org.junit.Assert.*;
 
 public class ECKeyTest {

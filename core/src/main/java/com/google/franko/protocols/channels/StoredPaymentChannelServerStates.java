@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.core.*;
+import com.google.franko.utils.Threading;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.protobuf.ByteString;
 import net.jcip.annotations.GuardedBy;

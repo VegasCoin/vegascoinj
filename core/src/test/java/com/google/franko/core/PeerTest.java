@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.core.Peer.PeerHandler;
-import com.google.digitalcoin.params.TestNet3Params;
-import com.google.digitalcoin.utils.TestUtils;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.core.Peer.PeerHandler;
+import com.google.franko.params.TestNet3Params;
+import com.google.franko.utils.TestUtils;
+import com.google.franko.utils.Threading;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
@@ -44,7 +44,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-import static com.google.digitalcoin.utils.TestUtils.*;
+import static com.google.franko.utils.TestUtils.*;
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.*;
 

@@ -1,9 +1,9 @@
-package com.google.digitalcoin.tools;
+package com.google.franko.tools;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.discovery.DnsDiscovery;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.utils.BriefLogFormatter;
+import com.google.franko.core.*;
+import com.google.franko.discovery.DnsDiscovery;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.utils.BriefLogFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

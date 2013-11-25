@@ -1,6 +1,6 @@
-package com.google.digitalcoin.wallet;
+package com.google.franko.wallet;
 
-import com.google.digitalcoin.core.Transaction;
+import com.google.franko.core.Transaction;
 
 /**
  * This coin selector will select any transaction at all, regardless of where it came from or whether it was

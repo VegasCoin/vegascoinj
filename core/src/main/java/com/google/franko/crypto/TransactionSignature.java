@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
-import com.google.digitalcoin.core.ECKey;
-import com.google.digitalcoin.core.Transaction;
-import com.google.digitalcoin.core.VerificationException;
+import com.google.franko.core.ECKey;
+import com.google.franko.core.Transaction;
+import com.google.franko.core.VerificationException;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigInteger;
 
 /**
- * A TransactionSignature wraps an {@link com.google.digitalcoin.core.ECKey.ECDSASignature} and adds methods for handling
+ * A TransactionSignature wraps an {@link com.google.franko.core.ECKey.ECDSASignature} and adds methods for handling
  * the additional SIGHASH mode byte that is used.
  */
 public class TransactionSignature extends ECKey.ECDSASignature {

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.store.BlockStore;
-import com.google.digitalcoin.store.MemoryBlockStore;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.store.BlockStore;
+import com.google.franko.store.MemoryBlockStore;
 import org.junit.Before;
 import org.junit.Test;
 import org.spongycastle.util.encoders.Hex;
@@ -28,8 +28,8 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.Arrays;
 
-import static com.google.digitalcoin.utils.TestUtils.createFakeBlock;
-import static com.google.digitalcoin.utils.TestUtils.createFakeTx;
+import static com.google.franko.utils.TestUtils.createFakeBlock;
+import static com.google.franko.utils.TestUtils.createFakeTx;
 import static org.junit.Assert.*;
 
 public class LazyParseByteCacheTest {

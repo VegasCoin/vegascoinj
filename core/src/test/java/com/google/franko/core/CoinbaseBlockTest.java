@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.core.AbstractBlockChain.NewBlockType;
-import com.google.digitalcoin.core.Wallet.BalanceType;
-import com.google.digitalcoin.params.MainNetParams;
+import com.google.franko.core.AbstractBlockChain.NewBlockType;
+import com.google.franko.core.Wallet.BalanceType;
+import com.google.franko.params.MainNetParams;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;

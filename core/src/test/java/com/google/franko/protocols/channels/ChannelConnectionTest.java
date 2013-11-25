@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.store.WalletProtobufSerializer;
-import com.google.digitalcoin.utils.TestWithWallet;
-import com.google.digitalcoin.utils.Threading;
-import com.google.digitalcoin.wallet.WalletFiles;
+import com.google.franko.core.*;
+import com.google.franko.store.WalletProtobufSerializer;
+import com.google.franko.utils.TestWithWallet;
+import com.google.franko.utils.Threading;
+import com.google.franko.wallet.WalletFiles;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
-import org.digitalcoin.paymentchannel.Protos;
+import org.franko.paymentchannel.Protos;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,9 +39,9 @@ import java.net.SocketAddress;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.google.digitalcoin.protocols.channels.PaymentChannelCloseException.CloseReason;
-import static com.google.digitalcoin.utils.TestUtils.createFakeBlock;
-import static org.digitalcoin.paymentchannel.Protos.TwoWayChannelMessage.MessageType;
+import static com.google.franko.protocols.channels.PaymentChannelCloseException.CloseReason;
+import static com.google.franko.utils.TestUtils.createFakeBlock;
+import static org.franko.paymentchannel.Protos.TwoWayChannelMessage.MessageType;
 import static org.junit.Assert.*;
 
 public class ChannelConnectionTest extends TestWithWallet {

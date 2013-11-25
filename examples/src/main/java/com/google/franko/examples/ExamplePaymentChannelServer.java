@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.examples;
+package com.google.franko.examples;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.kits.WalletAppKit;
-import com.google.digitalcoin.params.TestNet3Params;
-import com.google.digitalcoin.protocols.channels.*;
-import com.google.digitalcoin.utils.BriefLogFormatter;
+import com.google.franko.core.*;
+import com.google.franko.kits.WalletAppKit;
+import com.google.franko.params.TestNet3Params;
+import com.google.franko.protocols.channels.*;
+import com.google.franko.utils.BriefLogFormatter;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 /**
  * Thrown when a problem occurs in communicating with a peer, and we should

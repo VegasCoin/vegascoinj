@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.store;
+package com.google.franko.store;
 
 /**
  * Thrown when something goes wrong with storing a block. Examples: out of disk space.

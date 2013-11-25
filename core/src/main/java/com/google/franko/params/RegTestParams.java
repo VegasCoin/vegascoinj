@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.params;
+package com.google.franko.params;
 
-import com.google.digitalcoin.core.Block;
+import com.google.franko.core.Block;
 
 import java.math.BigInteger;
 

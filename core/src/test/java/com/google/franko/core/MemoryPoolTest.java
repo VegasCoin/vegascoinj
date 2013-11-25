@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.utils.BriefLogFormatter;
-import com.google.digitalcoin.utils.TestUtils;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.utils.BriefLogFormatter;
+import com.google.franko.utils.TestUtils;
 import org.junit.Before;
 import org.junit.Test;
 

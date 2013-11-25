@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.utils;
+package com.google.franko.utils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

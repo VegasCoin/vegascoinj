@@ -1,6 +1,6 @@
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.params.MainNetParams;
+import com.google.franko.params.MainNetParams;
 import org.junit.Test;
 import org.spongycastle.util.encoders.Hex;
 

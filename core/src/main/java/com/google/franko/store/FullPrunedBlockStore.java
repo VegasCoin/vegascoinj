@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.store;
+package com.google.franko.store;
 
-import com.google.digitalcoin.core.Sha256Hash;
-import com.google.digitalcoin.core.StoredBlock;
-import com.google.digitalcoin.core.StoredTransactionOutput;
-import com.google.digitalcoin.core.StoredUndoableBlock;
+import com.google.franko.core.Sha256Hash;
+import com.google.franko.core.StoredBlock;
+import com.google.franko.core.StoredTransactionOutput;
+import com.google.franko.core.StoredUndoableBlock;
 
 /**
  * <p>An implementor of FullPrunedBlockStore saves StoredBlock objects to some storage mechanism.</p>

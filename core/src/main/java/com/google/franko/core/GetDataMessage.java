@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 /**
  * Represents the "getdata" P2P network message, which requests the contents of blocks or transactions given their

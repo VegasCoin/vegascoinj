@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.*;
+import com.google.franko.core.*;
 
 import java.math.BigInteger;
 import java.util.Date;
@@ -78,7 +78,7 @@ public class StoredServerChannel {
     }
 
     /**
-     * If a handler is connected, call its {@link com.google.digitalcoin.protocols.channels.PaymentChannelServer#close()}
+     * If a handler is connected, call its {@link com.google.franko.protocols.channels.PaymentChannelServer#close()}
      * method thus disconnecting the TCP connection.
      */
     synchronized void closeConnectedHandler() {

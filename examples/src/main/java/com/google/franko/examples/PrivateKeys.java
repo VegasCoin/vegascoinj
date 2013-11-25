@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.examples;
+package com.google.franko.examples;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.store.MemoryBlockStore;
+import com.google.franko.core.*;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.store.MemoryBlockStore;
 
 import java.math.BigInteger;
 import java.net.InetAddress;

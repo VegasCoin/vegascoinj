@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.jni;
+package com.google.franko.jni;
 
-import com.google.digitalcoin.core.Transaction;
-import com.google.digitalcoin.core.TransactionConfidence;
+import com.google.franko.core.Transaction;
+import com.google.franko.core.TransactionConfidence;
 
 /**
  * An event listener that relays events to a native C++ object. A pointer to that object is stored in

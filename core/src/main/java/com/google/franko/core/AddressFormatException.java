@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 @SuppressWarnings("serial")
 public class AddressFormatException extends Exception {

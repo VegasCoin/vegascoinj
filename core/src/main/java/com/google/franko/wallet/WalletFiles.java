@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.wallet;
+package com.google.franko.wallet;
 
-import com.google.digitalcoin.core.Wallet;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.core.Wallet;
+import com.google.franko.utils.Threading;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

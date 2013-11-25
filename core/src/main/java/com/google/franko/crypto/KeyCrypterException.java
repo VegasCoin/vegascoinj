@@ -1,4 +1,4 @@
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
 /**
  * <p>Exception to provide the following to {@link EncrypterDecrypterOpenSSL}:</p>

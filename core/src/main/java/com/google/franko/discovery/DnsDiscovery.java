@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.discovery;
+package com.google.franko.discovery;
 
-import com.google.digitalcoin.core.NetworkParameters;
+import com.google.franko.core.NetworkParameters;
 import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

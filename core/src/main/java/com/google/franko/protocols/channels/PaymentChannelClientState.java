@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.crypto.TransactionSignature;
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.script.ScriptBuilder;
-import com.google.digitalcoin.utils.Threading;
-import com.google.digitalcoin.wallet.AllowUnconfirmedCoinSelector;
+import com.google.franko.core.*;
+import com.google.franko.crypto.TransactionSignature;
+import com.google.franko.script.Script;
+import com.google.franko.script.ScriptBuilder;
+import com.google.franko.utils.Threading;
+import com.google.franko.wallet.AllowUnconfirmedCoinSelector;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import org.slf4j.Logger;
@@ -221,7 +221,7 @@ public class PaymentChannelClientState {
      * Creates the initial multisig contract and incomplete refund transaction which can be requested at the appropriate
      * time using {@link PaymentChannelClientState#getIncompleteRefundTransaction} and
      * {@link PaymentChannelClientState#getMultisigContract()}. The way the contract is crafted can be adjusted by
-     * overriding {@link PaymentChannelClientState#editContractSendRequest(com.google.digitalcoin.core.Wallet.SendRequest)}.
+     * overriding {@link PaymentChannelClientState#editContractSendRequest(com.google.franko.core.Wallet.SendRequest)}.
      * By default unconfirmed coins are allowed to be used, as for micropayments the risk should be relatively low.
      *
      * @throws ValueOutOfRangeException If the value being used cannot be afforded or is too small to be accepted by the network

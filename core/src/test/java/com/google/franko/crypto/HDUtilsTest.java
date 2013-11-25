@@ -1,4 +1,4 @@
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
 import org.junit.Assert;
 import org.junit.Test;

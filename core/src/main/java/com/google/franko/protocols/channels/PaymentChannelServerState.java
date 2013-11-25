@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.crypto.TransactionSignature;
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.script.ScriptBuilder;
+import com.google.franko.core.*;
+import com.google.franko.crypto.TransactionSignature;
+import com.google.franko.script.Script;
+import com.google.franko.script.ScriptBuilder;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.FutureCallback;

@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
 /**
  * Parent class for header only messages that don't have a payload.
- * Currently this includes getaddr, ping, verack as well as the special digitalcoinj class UnknownMessage
+ * Currently this includes getaddr, ping, verack as well as the special frankoj class UnknownMessage
  *
  * @author git
  */

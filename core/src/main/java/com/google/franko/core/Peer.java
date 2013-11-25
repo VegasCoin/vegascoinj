@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.store.BlockStore;
-import com.google.digitalcoin.store.BlockStoreException;
-import com.google.digitalcoin.utils.ListenerRegistration;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.store.BlockStore;
+import com.google.franko.store.BlockStoreException;
+import com.google.franko.utils.ListenerRegistration;
+import com.google.franko.utils.Threading;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
@@ -1267,7 +1267,7 @@ public class Peer {
     /**
      * Sends the peer a ping message and returns a future that will be invoked when the pong is received back.
      * The future provides a number which is the number of milliseconds elapsed between the ping and the pong.
-     * Once the pong is received the value returned by {@link com.google.digitalcoin.core.Peer#getLastPingTime()} is
+     * Once the pong is received the value returned by {@link com.google.franko.core.Peer#getLastPingTime()} is
      * updated.
      * @throws ProtocolException if the peer version is too low to support measurable pings.
      */
@@ -1286,7 +1286,7 @@ public class Peer {
     }
 
     /**
-     * Returns the elapsed time of the last ping/pong cycle. If {@link com.google.digitalcoin.core.Peer#ping()} has never
+     * Returns the elapsed time of the last ping/pong cycle. If {@link com.google.franko.core.Peer#ping()} has never
      * been called or we did not hear back the "pong" message yet, returns {@link Long#MAX_VALUE}.
      */
     public long getLastPingTime() {
@@ -1301,7 +1301,7 @@ public class Peer {
     }
 
     /**
-     * Returns a moving average of the last N ping/pong cycles. If {@link com.google.digitalcoin.core.Peer#ping()} has never
+     * Returns a moving average of the last N ping/pong cycles. If {@link com.google.franko.core.Peer#ping()} has never
      * been called or we did not hear back the "pong" message yet, returns {@link Long#MAX_VALUE}. The moving average
      * window is 5 buckets.
      */

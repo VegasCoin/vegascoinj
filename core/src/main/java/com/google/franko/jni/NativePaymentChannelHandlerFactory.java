@@ -1,7 +1,7 @@
-package com.google.digitalcoin.jni;
+package com.google.franko.jni;
 
-import com.google.digitalcoin.protocols.channels.PaymentChannelServerListener;
-import com.google.digitalcoin.protocols.channels.ServerConnectionEventHandler;
+import com.google.franko.protocols.channels.PaymentChannelServerListener;
+import com.google.franko.protocols.channels.ServerConnectionEventHandler;
 
 import javax.annotation.Nullable;
 import java.net.SocketAddress;

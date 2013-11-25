@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.utils;
+package com.google.franko.utils;
 
 import com.google.common.util.concurrent.Callables;
 import com.google.common.util.concurrent.CycleDetectingLockFactory;
@@ -30,14 +30,14 @@ import static com.google.common.base.Preconditions.checkState;
 
 /**
  * Various threading related utilities. Provides a wrapper around explicit lock creation that lets you control whether
- * digitalcoinj performs cycle detection or not. Cycle detection is useful to detect bugs but comes with a small cost.
+ * frankoj performs cycle detection or not. Cycle detection is useful to detect bugs but comes with a small cost.
  * Also provides a worker thread that is designed for event listeners to be dispatched on.
  */
 public class Threading {
     /**
      * An executor with one thread that is intended for running event listeners on. This ensures all event listener code
      * runs without any locks being held. It's intended for the API user to run things on. Callbacks registered by
-     * digitalcoinj internally shouldn't normally run here, although currently there are a few exceptions.
+     * frankoj internally shouldn't normally run here, although currently there are a few exceptions.
      */
     public static Executor USER_THREAD;
 
@@ -65,7 +65,7 @@ public class Threading {
     public static void waitForUserCode() {
         // If this assert fires it means you have a bug in your code - you can't call this method inside your own
         // event handlers because it would never return. If you aren't calling this method explicitly, then that
-        // means there's a bug in digitalcoinj.
+        // means there's a bug in frankoj.
         if (vUserThread != null) {
             checkState(vUserThread.get() != null && vUserThread.get() != Thread.currentThread(),
                     "waitForUserCode() run on user code thread would deadlock.");
@@ -78,7 +78,7 @@ public class Threading {
      * any unhandled exceptions that are caught whilst the framework is processing network traffic or doing other
      * background tasks. The purpose of this is to allow you to report back unanticipated crashes from your users
      * to a central collection center for analysis and debugging. You should configure this <b>before</b> any
-     * digitalcoinj library code is run, setting it after you started network traffic and other forms of processing
+     * frankoj library code is run, setting it after you started network traffic and other forms of processing
      * may result in the change not taking effect.
      */
     @Nullable
@@ -88,14 +88,14 @@ public class Threading {
 
     static {
         // Default policy goes here. If you want to change this, use one of the static methods before
-        // instantiating any digitalcoinj objects. The policy change will take effect only on new objects
+        // instantiating any frankoj objects. The policy change will take effect only on new objects
         // from that point onwards.
         throwOnLockCycles();
 
         SINGLE_THREADED_EXECUTOR = Executors.newSingleThreadExecutor(new ThreadFactory() {
             @Nonnull @Override public Thread newThread(@Nonnull Runnable runnable) {
                 Thread t = new Thread(runnable);
-                t.setName("digitalcoinj user thread");
+                t.setName("frankoj user thread");
                 t.setDaemon(true);
                 t.setUncaughtExceptionHandler(uncaughtExceptionHandler);
                 vUserThread = new WeakReference<Thread>(t);

@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.wallet;
+package com.google.franko.wallet;
 
-import com.google.digitalcoin.core.Transaction;
-import com.google.digitalcoin.core.TransactionConfidence;
-import com.google.digitalcoin.core.Wallet;
+import com.google.franko.core.Transaction;
+import com.google.franko.core.TransactionConfidence;
+import com.google.franko.core.Wallet;
 
 import javax.annotation.Nullable;
 import java.util.List;

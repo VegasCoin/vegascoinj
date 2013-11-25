@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.params;
+package com.google.franko.params;
 
-import com.google.digitalcoin.core.Block;
-import com.google.digitalcoin.core.NetworkParameters;
+import com.google.franko.core.Block;
+import com.google.franko.core.NetworkParameters;
 
 import java.math.BigInteger;
 
 /**
- * Network parameters used by the digitalcoinj unit tests (and potentially your own). This lets you solve a block using
- * {@link com.google.digitalcoin.core.Block#solve()} by setting difficulty to the easiest possible.
+ * Network parameters used by the frankoj unit tests (and potentially your own). This lets you solve a block using
+ * {@link com.google.franko.core.Block#solve()} by setting difficulty to the easiest possible.
  */
 public class UnitTestParams extends NetworkParameters {
     public UnitTestParams() {

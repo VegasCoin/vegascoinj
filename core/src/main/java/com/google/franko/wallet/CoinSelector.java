@@ -1,6 +1,6 @@
-package com.google.digitalcoin.wallet;
+package com.google.franko.wallet;
 
-import com.google.digitalcoin.core.TransactionOutput;
+import com.google.franko.core.TransactionOutput;
 
 import java.math.BigInteger;
 import java.util.LinkedList;

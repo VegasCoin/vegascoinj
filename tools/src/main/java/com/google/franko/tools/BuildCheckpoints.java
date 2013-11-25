@@ -1,11 +1,11 @@
-package com.google.digitalcoin.tools;
+package com.google.franko.tools;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.store.BlockStore;
-import com.google.digitalcoin.store.MemoryBlockStore;
-import com.google.digitalcoin.utils.BriefLogFormatter;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.core.*;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.store.BlockStore;
+import com.google.franko.store.MemoryBlockStore;
+import com.google.franko.utils.BriefLogFormatter;
+import com.google.franko.utils.Threading;
 
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
@@ -31,7 +31,7 @@ public class BuildCheckpoints {
         // Sorted map of UNIX time of block to StoredBlock object.
         final TreeMap<Integer, StoredBlock> checkpoints = new TreeMap<Integer, StoredBlock>();
 
-        // Configure digitalcoinj to fetch only headers, not save them to disk, connect to a local fully synced/validated
+        // Configure frankoj to fetch only headers, not save them to disk, connect to a local fully synced/validated
         // node and to save block headers that are on interval boundaries, as long as they are <1 month old.
         final BlockStore store = new MemoryBlockStore(params);
         final BlockChain chain = new BlockChain(params, store);

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.discovery;
+package com.google.franko.discovery;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.TimeUnit;

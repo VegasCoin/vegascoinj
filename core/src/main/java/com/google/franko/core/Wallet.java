@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.core.TransactionConfidence.ConfidenceType;
-import com.google.digitalcoin.core.WalletTransaction.Pool;
-import com.google.digitalcoin.crypto.KeyCrypter;
-import com.google.digitalcoin.crypto.KeyCrypterException;
-import com.google.digitalcoin.crypto.KeyCrypterScrypt;
-import com.google.digitalcoin.store.UnreadableWalletException;
-import com.google.digitalcoin.store.WalletProtobufSerializer;
-import com.google.digitalcoin.utils.ListenerRegistration;
-import com.google.digitalcoin.utils.Threading;
-import com.google.digitalcoin.wallet.*;
+import com.google.franko.core.TransactionConfidence.ConfidenceType;
+import com.google.franko.core.WalletTransaction.Pool;
+import com.google.franko.crypto.KeyCrypter;
+import com.google.franko.crypto.KeyCrypterException;
+import com.google.franko.crypto.KeyCrypterScrypt;
+import com.google.franko.store.UnreadableWalletException;
+import com.google.franko.store.WalletProtobufSerializer;
+import com.google.franko.utils.ListenerRegistration;
+import com.google.franko.utils.Threading;
+import com.google.franko.wallet.*;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.*;
 import com.google.common.primitives.Ints;
@@ -33,7 +33,7 @@ import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
-import org.digitalcoinj.wallet.Protos.Wallet.EncryptionType;
+import org.frankoj.wallet.Protos.Wallet.EncryptionType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spongycastle.crypto.params.KeyParameter;
@@ -49,7 +49,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static com.google.digitalcoin.core.Utils.bitcoinValueToFriendlyString;
+import static com.google.franko.core.Utils.bitcoinValueToFriendlyString;
 import static com.google.common.base.Preconditions.*;
 
 // To do list:
@@ -77,19 +77,19 @@ import static com.google.common.base.Preconditions.*;
  * it is able to create new transactions that spend the recorded transactions, and this is the fundamental operation
  * of the Bitcoin protocol.</p>
  *
- * <p>To learn more about this class, read <b><a href="http://code.google.com/p/digitalcoinj/wiki/WorkingWithTheWallet">
+ * <p>To learn more about this class, read <b><a href="http://code.google.com/p/frankoj/wiki/WorkingWithTheWallet">
  *     working with the wallet.</a></b></p>
  *
  * <p>To fill up a Wallet with transactions, you need to use it in combination with a {@link BlockChain} and various
- * other objects, see the <a href="http://code.google.com/p/digitalcoinj/wiki/GettingStarted">Getting started</a> tutorial
+ * other objects, see the <a href="http://code.google.com/p/frankoj/wiki/GettingStarted">Getting started</a> tutorial
  * on the website to learn more about how to set everything up.</p>
  *
- * <p>Wallets can be serialized using either Java serialization - this is not compatible across versions of digitalcoinj,
+ * <p>Wallets can be serialized using either Java serialization - this is not compatible across versions of frankoj,
  * or protocol buffer serialization. You need to save the wallet whenever it changes, there is an auto-save feature
  * that simplifies this for you although you're still responsible for manually triggering a save when your app is about
  * to quit because the auto-save feature waits a moment before actually committing to disk to avoid IO thrashing when
  * the wallet is changing very fast (eg due to a block chain sync). See
- * {@link Wallet#autosaveToFile(java.io.File, long, java.util.concurrent.TimeUnit, com.google.digitalcoin.wallet.WalletFiles.Listener)}
+ * {@link Wallet#autosaveToFile(java.io.File, long, java.util.concurrent.TimeUnit, com.google.franko.wallet.WalletFiles.Listener)}
  * for more information about this.</p>
  */
 public class Wallet implements Serializable, BlockChainListener, PeerFilterProvider {
@@ -1487,7 +1487,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
 
         /**
          * When emptyWallet is set, all coins selected by the coin selector are sent to the first output in tx
-         * (its value is ignored and set to {@link com.google.digitalcoin.core.Wallet#getBalance()} - the fees required
+         * (its value is ignored and set to {@link com.google.franko.core.Wallet#getBalance()} - the fees required
          * for the transaction). Any additional outputs are removed.
          */
         public boolean emptyWallet = false;
@@ -1510,7 +1510,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
          * at least {@link Transaction#REFERENCE_DEFAULT_MIN_TX_FEE} if it is set, as default reference clients will
          * otherwise simply treat the transaction as if there were no fee at all.</p>
          *
-         * <p>Once {@link Wallet#completeTx(com.google.digitalcoin.core.Wallet.SendRequest)} is called, this is set to the
+         * <p>Once {@link Wallet#completeTx(com.google.franko.core.Wallet.SendRequest)} is called, this is set to the
          * value of the fee that was added.</p>
          *
          * <p>You might also consider adding a {@link SendRequest#feePerKb} to set the fee per kb of transaction size
@@ -1559,7 +1559,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
         public KeyParameter aesKey = null;
 
         /**
-         * If not null, the {@link com.google.digitalcoin.wallet.CoinSelector} to use instead of the wallets default. Coin selectors are
+         * If not null, the {@link com.google.franko.wallet.CoinSelector} to use instead of the wallets default. Coin selectors are
          * responsible for choosing which transaction outputs (coins) in a wallet to use given the desired send value
          * amount.
          */
@@ -1966,7 +1966,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
 
     /**
      * Adds the given ECKey to the wallet. There is currently no way to delete keys (that would result in coin loss).
-     * If {@link Wallet#autosaveToFile(java.io.File, long, java.util.concurrent.TimeUnit, com.google.digitalcoin.wallet.WalletFiles.Listener)}
+     * If {@link Wallet#autosaveToFile(java.io.File, long, java.util.concurrent.TimeUnit, com.google.franko.wallet.WalletFiles.Listener)}
      * has been called, triggers an auto save bypassing the normal coalescing delay and event handlers.
      * If the key already exists in the wallet, does nothing and returns false.
      */
@@ -1976,7 +1976,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
 
     /**
      * Adds the given keys to the wallet. There is currently no way to delete keys (that would result in coin loss).
-     * If {@link Wallet#autosaveToFile(java.io.File, long, java.util.concurrent.TimeUnit, com.google.digitalcoin.wallet.WalletFiles.Listener)}
+     * If {@link Wallet#autosaveToFile(java.io.File, long, java.util.concurrent.TimeUnit, com.google.franko.wallet.WalletFiles.Listener)}
      * has been called, triggers an auto save bypassing the normal coalescing delay and event handlers.
      * Returns the number of keys added, after duplicates are ignored. The onKeyAdded event will be called for each key
      * in the list that was not already present.
@@ -2424,7 +2424,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
 
     /**
      * Returns the earliest creation time of the keys in this wallet, in seconds since the epoch, ie the min of 
-     * {@link com.google.digitalcoin.core.ECKey#getCreationTimeSeconds()}. This can return zero if at least one key does
+     * {@link com.google.franko.core.ECKey#getCreationTimeSeconds()}. This can return zero if at least one key does
      * not have that data (was created before key timestamping was implemented). <p>
      *     
      * This method is most often used in conjunction with {@link PeerGroup#setFastCatchupTimeSecs(long)} in order to
@@ -2534,7 +2534,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
     }
 
     /**
-     * Convenience wrapper around {@link Wallet#encrypt(com.google.digitalcoin.crypto.KeyCrypter,
+     * Convenience wrapper around {@link Wallet#encrypt(com.google.franko.crypto.KeyCrypter,
      * org.spongycastle.crypto.params.KeyParameter)} which uses the default Scrypt key derivation algorithm and
      * parameters, derives a key from the given password and returns the created key.
      */
@@ -2549,7 +2549,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
 
     /**
      * Encrypt the wallet using the KeyCrypter and the AES key. A good default KeyCrypter to use is
-     * {@link com.google.digitalcoin.crypto.KeyCrypterScrypt}.
+     * {@link com.google.franko.crypto.KeyCrypterScrypt}.
      *
      * @param keyCrypter The KeyCrypter that specifies how to encrypt/ decrypt a key
      * @param aesKey AES key to use (normally created using KeyCrypter#deriveKey and cached as it is time consuming to create from a password)
@@ -2657,7 +2657,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
     }
 
     /**
-     * <p>Convenience wrapper around {@link Wallet#addNewEncryptedKey(com.google.digitalcoin.crypto.KeyCrypter,
+     * <p>Convenience wrapper around {@link Wallet#addNewEncryptedKey(com.google.franko.crypto.KeyCrypter,
      * org.spongycastle.crypto.params.KeyParameter)} which just derives the key afresh and uses the pre-set
      * keycrypter. The wallet must have been encrypted using one of the encrypt methods previously.</p>
      *
@@ -2934,7 +2934,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
      * money to fail! Finally please be aware that any listeners on the future will run either on the calling thread
      * if it completes immediately, or eventually on a background thread if the balance is not yet at the right
      * level. If you do something that means you know the balance should be sufficient to trigger the future,
-     * you can use {@link com.google.digitalcoin.utils.Threading#waitForUserCode()} to block until the future had a
+     * you can use {@link com.google.franko.utils.Threading#waitForUserCode()} to block until the future had a
      * chance to be updated.</p>
      */
     public ListenableFuture<BigInteger> getBalanceFuture(final BigInteger value, final BalanceType type) {
@@ -3368,7 +3368,7 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
      * re-organisation of the wallet contents on the block chain. For instance, in future the wallet may choose to
      * optimise itself to reduce fees or improve privacy.</p>
      */
-    public void setTransactionBroadcaster(@Nullable com.google.digitalcoin.core.TransactionBroadcaster broadcaster) {
+    public void setTransactionBroadcaster(@Nullable com.google.franko.core.TransactionBroadcaster broadcaster) {
         lock.lock();
         try {
             if (vTransactionBroadcaster == broadcaster)

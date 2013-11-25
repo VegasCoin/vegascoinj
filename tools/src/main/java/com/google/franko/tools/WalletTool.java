@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.tools;
+package com.google.franko.tools;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.crypto.KeyCrypterException;
-import com.google.digitalcoin.discovery.DnsDiscovery;
-import com.google.digitalcoin.discovery.PeerDiscovery;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.RegTestParams;
-import com.google.digitalcoin.params.TestNet3Params;
-import com.google.digitalcoin.store.*;
-import com.google.digitalcoin.utils.BriefLogFormatter;
+import com.google.franko.core.*;
+import com.google.franko.crypto.KeyCrypterException;
+import com.google.franko.discovery.DnsDiscovery;
+import com.google.franko.discovery.PeerDiscovery;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.RegTestParams;
+import com.google.franko.params.TestNet3Params;
+import com.google.franko.store.*;
+import com.google.franko.utils.BriefLogFormatter;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import joptsimple.OptionSpec;
 import joptsimple.util.DateConverter;
-import org.digitalcoinj.wallet.Protos;
+import org.frankoj.wallet.Protos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spongycastle.util.encoders.Hex;

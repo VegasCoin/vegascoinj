@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.utils;
+package com.google.franko.utils;
 
-import com.google.digitalcoin.core.Transaction;
-import com.google.digitalcoin.core.TransactionBroadcaster;
-import com.google.digitalcoin.core.VerificationException;
-import com.google.digitalcoin.core.Wallet;
+import com.google.franko.core.Transaction;
+import com.google.franko.core.TransactionBroadcaster;
+import com.google.franko.core.VerificationException;
+import com.google.franko.core.Wallet;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.SettableFuture;

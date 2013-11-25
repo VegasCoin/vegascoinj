@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.niowrapper;
+package com.google.franko.protocols.niowrapper;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

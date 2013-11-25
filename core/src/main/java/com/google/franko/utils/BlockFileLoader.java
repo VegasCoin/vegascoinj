@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.utils;
+package com.google.franko.utils;
 
-import com.google.digitalcoin.core.Block;
-import com.google.digitalcoin.core.NetworkParameters;
-import com.google.digitalcoin.core.ProtocolException;
-import com.google.digitalcoin.core.Utils;
+import com.google.franko.core.Block;
+import com.google.franko.core.NetworkParameters;
+import com.google.franko.core.ProtocolException;
+import com.google.franko.core.Utils;
 
 import java.io.File;
 import java.io.FileInputStream;

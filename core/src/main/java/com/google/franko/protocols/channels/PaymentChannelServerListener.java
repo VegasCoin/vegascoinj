@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -24,13 +24,13 @@ import java.net.SocketAddress;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.google.digitalcoin.core.Sha256Hash;
-import com.google.digitalcoin.core.TransactionBroadcaster;
-import com.google.digitalcoin.core.Wallet;
-import com.google.digitalcoin.protocols.niowrapper.NioServer;
-import com.google.digitalcoin.protocols.niowrapper.ProtobufParser;
-import com.google.digitalcoin.protocols.niowrapper.StreamParserFactory;
-import org.digitalcoin.paymentchannel.Protos;
+import com.google.franko.core.Sha256Hash;
+import com.google.franko.core.TransactionBroadcaster;
+import com.google.franko.core.Wallet;
+import com.google.franko.protocols.niowrapper.NioServer;
+import com.google.franko.protocols.niowrapper.ProtobufParser;
+import com.google.franko.protocols.niowrapper.StreamParserFactory;
+import org.franko.paymentchannel.Protos;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

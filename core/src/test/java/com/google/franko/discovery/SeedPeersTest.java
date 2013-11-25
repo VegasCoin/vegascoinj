@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.digitalcoin.discovery;
+package com.google.franko.discovery;
 
-import com.google.digitalcoin.params.MainNetParams;
+import com.google.franko.params.MainNetParams;
 import org.junit.Test;
 
 import java.net.InetSocketAddress;

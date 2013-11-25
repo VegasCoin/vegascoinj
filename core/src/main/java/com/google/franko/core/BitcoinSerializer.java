@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
 
 import org.slf4j.Logger;
@@ -27,7 +27,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.google.digitalcoin.core.Utils.*;
+import static com.google.franko.core.Utils.*;
 
 /**
  * <p>Methods to serialize and de-serialize messages to the Bitcoin network format as defined in

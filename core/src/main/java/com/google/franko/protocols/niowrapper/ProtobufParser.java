@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.niowrapper;
+package com.google.franko.protocols.niowrapper;
 
-import com.google.digitalcoin.core.Utils;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.core.Utils;
+import com.google.franko.utils.Threading;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.MessageLite;
 import org.slf4j.Logger;

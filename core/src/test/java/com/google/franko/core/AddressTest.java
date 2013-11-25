@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.TestNet3Params;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.TestNet3Params;
 import org.junit.Test;
 import org.spongycastle.util.encoders.Hex;
 

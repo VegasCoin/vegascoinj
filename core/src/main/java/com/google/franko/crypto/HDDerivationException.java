@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
 public class HDDerivationException extends RuntimeException {
     public HDDerivationException(String message) {

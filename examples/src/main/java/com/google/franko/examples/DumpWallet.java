@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.examples;
+package com.google.franko.examples;
 
-import com.google.digitalcoin.core.Wallet;
+import com.google.franko.core.Wallet;
 
 import java.io.File;
 

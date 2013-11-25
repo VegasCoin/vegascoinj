@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.examples;
+package com.google.franko.examples;
 
-import com.google.digitalcoin.core.AbstractPeerEventListener;
-import com.google.digitalcoin.core.NetworkParameters;
-import com.google.digitalcoin.core.Peer;
-import com.google.digitalcoin.core.PeerGroup;
-import com.google.digitalcoin.discovery.DnsDiscovery;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.utils.BriefLogFormatter;
+import com.google.franko.core.AbstractPeerEventListener;
+import com.google.franko.core.NetworkParameters;
+import com.google.franko.core.Peer;
+import com.google.franko.core.PeerGroup;
+import com.google.franko.discovery.DnsDiscovery;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.utils.BriefLogFormatter;
 import com.google.common.collect.Lists;
 
 import javax.swing.*;

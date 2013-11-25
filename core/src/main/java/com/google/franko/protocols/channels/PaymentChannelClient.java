@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.protocols.channels.PaymentChannelCloseException.CloseReason;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.core.*;
+import com.google.franko.protocols.channels.PaymentChannelCloseException.CloseReason;
+import com.google.franko.utils.Threading;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
 import net.jcip.annotations.GuardedBy;
-import org.digitalcoin.paymentchannel.Protos;
+import org.franko.paymentchannel.Protos;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
@@ -339,7 +339,7 @@ public class PaymentChannelClient implements IPaymentChannelClient {
      * intending to reopen the channel later. There is likely little reason to use this in a stateless protocol.</p>
      *
      * <p>Note that this <b>MUST</b> still be called even after either
-     * {@link ClientConnection#destroyConnection(com.google.digitalcoin.protocols.channels.PaymentChannelCloseException.CloseReason)} or
+     * {@link ClientConnection#destroyConnection(com.google.franko.protocols.channels.PaymentChannelCloseException.CloseReason)} or
      * {@link PaymentChannelClient#settle()} is called, to actually handle the connection close logic.</p>
      */
     @Override

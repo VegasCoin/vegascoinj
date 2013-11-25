@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.protocols.channels;
+package com.google.franko.protocols.channels;
 
-import com.google.digitalcoin.core.ECKey;
-import com.google.digitalcoin.core.Sha256Hash;
-import com.google.digitalcoin.core.Wallet;
-import com.google.digitalcoin.protocols.niowrapper.NioClient;
-import com.google.digitalcoin.protocols.niowrapper.ProtobufParser;
+import com.google.franko.core.ECKey;
+import com.google.franko.core.Sha256Hash;
+import com.google.franko.core.Wallet;
+import com.google.franko.protocols.niowrapper.NioClient;
+import com.google.franko.protocols.niowrapper.ProtobufParser;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
-import org.digitalcoin.paymentchannel.Protos;
+import org.franko.paymentchannel.Protos;
 
 import java.io.IOException;
 import java.math.BigInteger;

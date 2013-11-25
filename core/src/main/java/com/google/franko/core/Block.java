@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.script.Script;
-import com.google.digitalcoin.script.ScriptBuilder;
+import com.google.franko.script.Script;
+import com.google.franko.script.ScriptBuilder;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -35,9 +35,9 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-import static com.google.digitalcoin.core.Utils.doubleDigest;
-import static com.google.digitalcoin.core.Utils.doubleDigestTwoBuffers;
-import static com.google.digitalcoin.core.Utils.scryptDigest;
+import static com.google.franko.core.Utils.doubleDigest;
+import static com.google.franko.core.Utils.doubleDigestTwoBuffers;
+import static com.google.franko.core.Utils.scryptDigest;
 
 /**
  * <p>A block is a group of transactions, and is one of the fundamental data structures of the Bitcoin system.
@@ -165,7 +165,7 @@ public class Block extends Message {
      * the system it was 50 coins per block, in late 2012 it went to 25 coins per block, and so on. The size of
      * a coinbase transaction is inflation plus fees.</p>
      *
-     * <p>The half-life is controlled by {@link com.google.digitalcoin.core.NetworkParameters#getSubsidyDecreaseBlockCount()}.
+     * <p>The half-life is controlled by {@link com.google.franko.core.NetworkParameters#getSubsidyDecreaseBlockCount()}.
      * </p>
      */
     public BigInteger getBlockInflation(int height) {

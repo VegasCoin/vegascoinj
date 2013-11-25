@@ -1,20 +1,20 @@
-package com.google.digitalcoin.tools;
+package com.google.franko.tools;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.TestNet3Params;
-import com.google.digitalcoin.store.*;
-import com.google.digitalcoin.utils.BlockFileLoader;
+import com.google.franko.core.*;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.TestNet3Params;
+import com.google.franko.store.*;
+import com.google.franko.utils.BlockFileLoader;
 import com.google.common.base.Preconditions;
 
 import java.io.File;
 
-/** Very thin wrapper around {@link com.google.digitalcoin.utils.BlockFileLoader} */
+/** Very thin wrapper around {@link com.google.franko.utils.BlockFileLoader} */
 public class BlockImporter {
     public static void main(String[] args) throws BlockStoreException, VerificationException, PrunedException {
         System.out.println("USAGE: BlockImporter (prod|test) (H2|Disk|MemFull|Mem|SPV) [blockStore]");
         System.out.println("       blockStore is required unless type is Mem or MemFull");
-        System.out.println("       eg BlockImporter prod H2 /home/user/digitalcoinj.h2store");
+        System.out.println("       eg BlockImporter prod H2 /home/user/frankoj.h2store");
         System.out.println("       Does full verification if the store supports it");
         Preconditions.checkArgument(args.length == 2 || args.length == 3);
         

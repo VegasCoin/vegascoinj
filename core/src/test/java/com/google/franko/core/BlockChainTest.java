@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.core.Wallet.BalanceType;
-import com.google.digitalcoin.params.MainNetParams;
-import com.google.digitalcoin.params.TestNet2Params;
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.store.BlockStore;
-import com.google.digitalcoin.store.MemoryBlockStore;
-import com.google.digitalcoin.utils.BriefLogFormatter;
-import com.google.digitalcoin.utils.TestUtils;
+import com.google.franko.core.Wallet.BalanceType;
+import com.google.franko.params.MainNetParams;
+import com.google.franko.params.TestNet2Params;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.store.BlockStore;
+import com.google.franko.store.MemoryBlockStore;
+import com.google.franko.utils.BriefLogFormatter;
+import com.google.franko.utils.TestUtils;
 import com.google.common.util.concurrent.ListenableFuture;
 import org.junit.After;
 import org.junit.Before;
@@ -33,8 +33,8 @@ import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.google.digitalcoin.utils.TestUtils.createFakeBlock;
-import static com.google.digitalcoin.utils.TestUtils.createFakeTx;
+import static com.google.franko.utils.TestUtils.createFakeBlock;
+import static com.google.franko.utils.TestUtils.createFakeTx;
 import static org.junit.Assert.*;
 
 // Handling of chain splits/reorgs are in ChainSplitTests.

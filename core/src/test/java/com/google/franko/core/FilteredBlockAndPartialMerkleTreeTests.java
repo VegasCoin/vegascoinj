@@ -1,8 +1,8 @@
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.core.TransactionConfidence.ConfidenceType;
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.store.MemoryBlockStore;
+import com.google.franko.core.TransactionConfidence.ConfidenceType;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.store.MemoryBlockStore;
 import org.junit.Test;
 import org.spongycastle.util.encoders.Hex;
 

@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
 import java.io.Serializable;
 
-import org.digitalcoinj.wallet.Protos.Wallet.EncryptionType;
+import org.frankoj.wallet.Protos.Wallet.EncryptionType;
 import org.spongycastle.crypto.params.KeyParameter;
 
 /**

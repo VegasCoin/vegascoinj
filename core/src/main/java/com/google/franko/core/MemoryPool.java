@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.utils.Threading;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

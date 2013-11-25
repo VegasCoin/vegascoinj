@@ -16,7 +16,7 @@
  *
  */
 
-package com.google.digitalcoin.uri;
+package com.google.franko.uri;
 
 /**
  * <p>Exception to provide the following to {@link BitcoinURI}:</p>

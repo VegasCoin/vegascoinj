@@ -15,13 +15,13 @@
  */
 
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.core.Peer.PeerHandler;
-import com.google.digitalcoin.discovery.PeerDiscovery;
-import com.google.digitalcoin.discovery.PeerDiscoveryException;
-import com.google.digitalcoin.utils.ListenerRegistration;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.core.Peer.PeerHandler;
+import com.google.franko.discovery.PeerDiscovery;
+import com.google.franko.discovery.PeerDiscoveryException;
+import com.google.franko.utils.ListenerRegistration;
+import com.google.franko.utils.Threading;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 import com.google.common.util.concurrent.*;
@@ -1083,7 +1083,7 @@ public class PeerGroup extends AbstractIdleService implements TransactionBroadca
 
     /**
      * Returns a future that is triggered when the number of connected peers is equal to the given number of connected
-     * peers. By using this with {@link com.google.digitalcoin.core.PeerGroup#getMaxConnections()} you can wait until the
+     * peers. By using this with {@link com.google.franko.core.PeerGroup#getMaxConnections()} you can wait until the
      * network is fully online. To block immediately, just call get() on the result.
      *
      * @param numPeers How many peers to wait for.
@@ -1115,7 +1115,7 @@ public class PeerGroup extends AbstractIdleService implements TransactionBroadca
      * enough, {@link PeerGroup#broadcastTransaction(Transaction)} will wait until the minimum number is reached so
      * propagation across the network can be observed. If no value has been set using
      * {@link PeerGroup#setMinBroadcastConnections(int)} a default of half of whatever
-     * {@link com.google.digitalcoin.core.PeerGroup#getMaxConnections()} returns is used.
+     * {@link com.google.franko.core.PeerGroup#getMaxConnections()} returns is used.
      * @return
      */
     public int getMinBroadcastConnections() {
@@ -1135,7 +1135,7 @@ public class PeerGroup extends AbstractIdleService implements TransactionBroadca
     }
 
     /**
-     * See {@link com.google.digitalcoin.core.PeerGroup#getMinBroadcastConnections()}.
+     * See {@link com.google.franko.core.PeerGroup#getMinBroadcastConnections()}.
      */
     public void setMinBroadcastConnections(int value) {
         lock.lock();
@@ -1208,7 +1208,7 @@ public class PeerGroup extends AbstractIdleService implements TransactionBroadca
 
     /**
      * Returns the period between pings for an individual peer. Setting this lower means more accurate and timely ping
-     * times are available via {@link com.google.digitalcoin.core.Peer#getLastPingTime()} but it increases load on the
+     * times are available via {@link com.google.franko.core.Peer#getLastPingTime()} but it increases load on the
      * remote node. It defaults to 5000.
      */
     public long getPingIntervalMsec() {
@@ -1222,10 +1222,10 @@ public class PeerGroup extends AbstractIdleService implements TransactionBroadca
 
     /**
      * Sets the period between pings for an individual peer. Setting this lower means more accurate and timely ping
-     * times are available via {@link com.google.digitalcoin.core.Peer#getLastPingTime()} but it increases load on the
+     * times are available via {@link com.google.franko.core.Peer#getLastPingTime()} but it increases load on the
      * remote node. It defaults to {@link PeerGroup#DEFAULT_PING_INTERVAL_MSEC}.
      * Setting the value to be <= 0 disables pinging entirely, although you can still request one yourself
-     * using {@link com.google.digitalcoin.core.Peer#ping()}.
+     * using {@link com.google.franko.core.Peer#ping()}.
      */
     public void setPingIntervalMsec(long pingIntervalMsec) {
         lock.lock();

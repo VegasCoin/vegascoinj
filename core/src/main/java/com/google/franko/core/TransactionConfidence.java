@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.utils.ListenerRegistration;
-import com.google.digitalcoin.utils.Threading;
+import com.google.franko.utils.ListenerRegistration;
+import com.google.franko.utils.Threading;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
@@ -52,9 +52,9 @@ import java.util.concurrent.Executor;
  * <p>Alternatively, you may know that the transaction is "dead", that is, one or more of its inputs have
  * been double spent and will never confirm unless there is another re-org.</p>
  *
- * <p>TransactionConfidence is updated via the {@link com.google.digitalcoin.core.TransactionConfidence#notifyWorkDone(Block)}
+ * <p>TransactionConfidence is updated via the {@link com.google.franko.core.TransactionConfidence#notifyWorkDone(Block)}
  * method to ensure the block depth and work done are up to date.</p>
- * To make a copy that won't be changed, use {@link com.google.digitalcoin.core.TransactionConfidence#duplicate()}.
+ * To make a copy that won't be changed, use {@link com.google.franko.core.TransactionConfidence#duplicate()}.
  */
 public class TransactionConfidence implements Serializable {
     private static final long serialVersionUID = 4577920141400556444L;
@@ -85,7 +85,7 @@ public class TransactionConfidence implements Serializable {
          * announced and is considered valid by the network. A pending transaction will be announced if the containing
          * wallet has been attached to a live {@link PeerGroup} using {@link PeerGroup#addWallet(Wallet)}.
          * You can estimate how likely the transaction is to be included by connecting to a bunch of nodes then measuring
-         * how many announce it, using {@link com.google.digitalcoin.core.TransactionConfidence#numBroadcastPeers()}.
+         * how many announce it, using {@link com.google.franko.core.TransactionConfidence#numBroadcastPeers()}.
          * Or if you saw it from a trusted peer, you can assume it's valid and will get mined sooner or later as well.
          */
         PENDING(2),
@@ -164,7 +164,7 @@ public class TransactionConfidence implements Serializable {
         /** An enum that describes why a transaction confidence listener is being invoked (i.e. the class of change). */
         public enum ChangeReason {
             /**
-             * Occurs when the type returned by {@link com.google.digitalcoin.core.TransactionConfidence#getConfidenceType()}
+             * Occurs when the type returned by {@link com.google.franko.core.TransactionConfidence#getConfidenceType()}
              * has changed. For example, if a PENDING transaction changes to BUILDING or DEAD, then this reason will
              * be given. It's a high level summary.
              */
@@ -440,7 +440,7 @@ public class TransactionConfidence implements Serializable {
     /**
      * The source of a transaction tries to identify where it came from originally. For instance, did we download it
      * from the peer to peer network, or make it ourselves, or receive it via Bluetooth, or import it from another app,
-     * and so on. This information is useful for {@link com.google.digitalcoin.wallet.CoinSelector} implementations to risk analyze
+     * and so on. This information is useful for {@link com.google.franko.wallet.CoinSelector} implementations to risk analyze
      * transactions and decide when to spend them.
      */
     public synchronized Source getSource() {
@@ -450,7 +450,7 @@ public class TransactionConfidence implements Serializable {
     /**
      * The source of a transaction tries to identify where it came from originally. For instance, did we download it
      * from the peer to peer network, or make it ourselves, or receive it via Bluetooth, or import it from another app,
-     * and so on. This information is useful for {@link com.google.digitalcoin.wallet.CoinSelector} implementations to risk analyze
+     * and so on. This information is useful for {@link com.google.franko.wallet.CoinSelector} implementations to risk analyze
      * transactions and decide when to spend them.
      */
     public synchronized void setSource(Source source) {

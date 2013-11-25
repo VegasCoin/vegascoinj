@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.utils;
+package com.google.franko.utils;
 
-import com.google.digitalcoin.core.*;
-import com.google.digitalcoin.params.UnitTestParams;
-import com.google.digitalcoin.store.BlockStore;
-import com.google.digitalcoin.store.MemoryBlockStore;
+import com.google.franko.core.*;
+import com.google.franko.params.UnitTestParams;
+import com.google.franko.store.BlockStore;
+import com.google.franko.store.MemoryBlockStore;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.math.BigInteger;
 
-import static com.google.digitalcoin.utils.TestUtils.createFakeBlock;
-import static com.google.digitalcoin.utils.TestUtils.createFakeTx;
+import static com.google.franko.utils.TestUtils.createFakeBlock;
+import static com.google.franko.utils.TestUtils.createFakeTx;
 
 // TODO: This needs to be somewhat rewritten - the "sendMoneyToWallet" methods aren't sending via the block chain object
 

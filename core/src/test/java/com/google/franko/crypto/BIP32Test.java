@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.crypto;
+package com.google.franko.crypto;
 
-import com.google.digitalcoin.core.AddressFormatException;
-import com.google.digitalcoin.core.Base58;
-import com.google.digitalcoin.crypto.ChildNumber;
-import com.google.digitalcoin.crypto.DeterministicHierarchy;
-import com.google.digitalcoin.crypto.DeterministicKey;
-import com.google.digitalcoin.crypto.HDKeyDerivation;
+import com.google.franko.core.AddressFormatException;
+import com.google.franko.core.Base58;
+import com.google.franko.crypto.ChildNumber;
+import com.google.franko.crypto.DeterministicHierarchy;
+import com.google.franko.crypto.DeterministicKey;
+import com.google.franko.crypto.HDKeyDerivation;
 import com.google.common.base.Functions;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;

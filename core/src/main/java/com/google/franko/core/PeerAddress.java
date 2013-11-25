@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.core;
+package com.google.franko.core;
 
-import com.google.digitalcoin.params.MainNetParams;
+import com.google.franko.params.MainNetParams;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -25,8 +25,8 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 
-import static com.google.digitalcoin.core.Utils.uint32ToByteStreamLE;
-import static com.google.digitalcoin.core.Utils.uint64ToByteStreamLE;
+import static com.google.franko.core.Utils.uint32ToByteStreamLE;
+import static com.google.franko.core.Utils.uint64ToByteStreamLE;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**

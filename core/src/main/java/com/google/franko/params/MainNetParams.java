@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.digitalcoin.params;
+package com.google.franko.params;
 
-import com.google.digitalcoin.core.NetworkParameters;
-import com.google.digitalcoin.core.Sha256Hash;
-import com.google.digitalcoin.core.Utils;
-import com.google.digitalcoin.core.CoinDefinition;
+import com.google.franko.core.NetworkParameters;
+import com.google.franko.core.Sha256Hash;
+import com.google.franko.core.Utils;
+import com.google.franko.core.CoinDefinition;
 
 import static com.google.common.base.Preconditions.checkState;
 

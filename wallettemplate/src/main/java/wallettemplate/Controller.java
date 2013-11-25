@@ -1,9 +1,9 @@
 package wallettemplate;
 
-import com.google.digitalcoin.core.AbstractWalletEventListener;
-import com.google.digitalcoin.core.DownloadListener;
-import com.google.digitalcoin.core.Utils;
-import com.google.digitalcoin.core.Wallet;
+import com.google.franko.core.AbstractWalletEventListener;
+import com.google.franko.core.DownloadListener;
+import com.google.franko.core.Utils;
+import com.google.franko.core.Wallet;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;

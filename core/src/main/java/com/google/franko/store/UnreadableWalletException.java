@@ -1,4 +1,4 @@
-package com.google.digitalcoin.store;
+package com.google.franko.store;
 
 /**
  * Thrown by the {@link WalletProtobufSerializer} when the serialized protocol buffer is either corrupted,
