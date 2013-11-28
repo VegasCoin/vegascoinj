@@ -33,25 +33,17 @@ public class CoinDefinition {
     };
     public static final CoinHash coinHash = CoinHash.scrypt;
     //Original Values
-    public static final int TARGET_TIMESPAN_0 = (int)(6 * 60 * 3 * 20);  // 3.5 days per difficulty cycle, on average.
-    public static final int TARGET_SPACING_0 = (int)(1 * 20);  // 2.5 minutes per block.
-    public static final int INTERVAL_0 = TARGET_TIMESPAN_0 / TARGET_SPACING_0;
-
-    public static final int TARGET_TIMESPAN = (int)(108 * 40);  // 72 minutes per difficulty cycle, on average.
-    public static final int TARGET_SPACING = (int)(1 * 40);  // 40 seconds per block.
+    public static final int TARGET_TIMESPAN = (int)(0.25 * 24 * 60 * 60);  // 720 blocks.
+    public static final int TARGET_SPACING = (int)(1 * 30);  // 30 seconds per block.
 
     public static final int INTERVAL = TARGET_TIMESPAN / TARGET_SPACING;
 
     public static final int getInterval(int height, boolean testNet) {
-        if(height < nDifficultySwitchHeight)
-            return INTERVAL_0;
-        else
+
             return INTERVAL;
     }
     public static final int getTargetTimespan(int height, boolean testNet) {
-        if(height < nDifficultySwitchHeight)
-            return TARGET_TIMESPAN_0;
-        else
+
             return TARGET_TIMESPAN;
     }
     public static int spendableCoinbaseDepth = 100; //main.h: static const int COINBASE_MATURITY
@@ -62,10 +54,10 @@ public class CoinDefinition {
     public static final BigInteger DUST_LIMIT = Utils.toNanoCoins("0.00001"); //main.h DUST_SOFT_LIMIT        0.00001 coins
     public static final BigInteger DUST_HARD_LIMIT = Utils.toNanoCoins("0.000001"); //main.h DUST_HARD_LIMIT        0.000001 coins
 
-    public static final int PROTOCOL_VERSION = 70002;          //version.h PROTOCOL_VERSION
+    public static final int PROTOCOL_VERSION = 70002;//70002;          //version.h PROTOCOL_VERSION
     public static final int MIN_PROTOCOL_VERSION = 209;        //version.h MIN_PROTO_VERSION
 
-    public static final boolean supportsBloomFiltering = true; //Requires PROTOCOL_VERSION 70000 in the client
+    public static final boolean supportsBloomFiltering = false; //Requires PROTOCOL_VERSION 70000 in the client
 
     public static final int Port    = 7912;       //protocol.h GetDefaultPort(testnet=false)
     public static final int TestPort = 17912;     //protocol.h GetDefaultPort(testnet=true)
@@ -85,14 +77,15 @@ public class CoinDefinition {
     static public int genesisBlockValue = 0;                                                              //main.cpp: LoadBlockIndex
     //taken from the raw data of the block explorer
     static public String genesisXInBytes = "04ffff001d01042f352f392f3230313320416964656e2077696c6c20626520612079656172206f6c6420696e2074776f206d6f6e746873";   //"5/9/2013 Aiden will be a year old in two months"
-    static public String genessiXOutBytes = "41040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9ac";
+    static public String genessiXOutBytes = "040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9";
 
     //net.cpp strDNSSeed
     static public String[] dnsSeeds = new String[] {
-            "dnsseed.frankos.org", // US-EAST
-            "tokyo.briefcaseit.com", //JAPAN,TOKYO
-            "dnsseed.copiamarket.com", //US
+            //"dnsseed.frankos.org", // US-EAST
+            //"tokyo.briefcaseit.com", //JAPAN,TOKYO
+            //"dnsseed.copiamarket.com", //US
             "frk.dencoinpools.com",//US
+            //"142.11.90.109"
     };
 
     //
@@ -156,12 +149,12 @@ public class CoinDefinition {
         checkpoints.put( 27650, new Sha256Hash("b2a25b57648bf10a81dcc3b23fb758bceb6f652d121bd44b2f3c7da3fd0f0cef"));
         checkpoints.put( 29040, new Sha256Hash("34b4dbe94b3e1bc0f6b199ee722a9fbbb52315ae53dd37cbc949fbc84aa3c6fe"));
         checkpoints.put( 48080, new Sha256Hash("08f789323bf5d116575c5749fa617696f88d0179faac534647abb5065abbaddf"));
-        checkpoints.put( 60000, new Sha256Hash("046ca133f715de3f8d83965487002c9cc1cebe4bb0fc10a1155fc9a6d2767293b"));
-        checkpoints.put( 70000, new Sha256Hash("01ad0aa03e8888cef8381aeea5ca679602bbb32e8245e9cd36abce77cda936bfb"));
-        checkpoints.put( 80000, new Sha256Hash("03a508431391d8203d4dd8fde8ffc529c26923cc8da9f2e64342441bb7afa940c"));
-        checkpoints.put( 90000, new Sha256Hash("08571865fb72beddf95872cbe3490aeb2b7558c7810b0a4aef9d581e249ef9d98"));
-        checkpoints.put( 216802, new Sha256Hash("0c946c4bdb51a240a103059f69112f301995e3a293044d3a4eff8d4c95cb0a5e1"));
-        checkpoints.put( 219638, new Sha256Hash("035fcdaff88c5b989895047f2be66948618feec9ceefaa947341c4f58c55d9362"));
+        checkpoints.put( 60000, new Sha256Hash("46ca133f715de3f8d83965487002c9cc1cebe4bb0fc10a1155fc9a6d2767293b"));
+        checkpoints.put( 70000, new Sha256Hash("1ad0aa03e8888cef8381aeea5ca679602bbb32e8245e9cd36abce77cda936bfb"));
+        checkpoints.put( 80000, new Sha256Hash("3a508431391d8203d4dd8fde8ffc529c26923cc8da9f2e64342441bb7afa940c"));
+        checkpoints.put( 90000, new Sha256Hash("8571865fb72beddf95872cbe3490aeb2b7558c7810b0a4aef9d581e249ef9d98"));
+        checkpoints.put( 216802, new Sha256Hash("c946c4bdb51a240a103059f69112f301995e3a293044d3a4eff8d4c95cb0a5e1"));
+        checkpoints.put( 219638, new Sha256Hash("35fcdaff88c5b989895047f2be66948618feec9ceefaa947341c4f58c55d9362"));
     }
 
 

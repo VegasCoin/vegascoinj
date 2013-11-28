@@ -780,17 +780,13 @@ public abstract class AbstractBlockChain {
         checkState(lock.isLocked());
         Block prev = storedPrev.getHeader();
 
-        int nDifficultySwitchHeight = 476280;
-        int nInflationFixHeight = 523800;
-        boolean fNewDifficultyProtocol = ((storedPrev.getHeight() + 1) >= CoinDefinition.nDifficultySwitchHeight);
-        boolean fInflationFixProtocol = ((storedPrev.getHeight() + 1) >= CoinDefinition.nInflationFixHeight);
 
-        int nTargetTimespanCurrent = fInflationFixProtocol? params.targetTimespan : (params.targetTimespan*5);
-        int interval = fInflationFixProtocol? (nTargetTimespanCurrent / params.TARGET_SPACING) : (nTargetTimespanCurrent / (params.TARGET_SPACING / 2));
+
+        int nTargetTimespanCurrent = params.getTargetTimespan();
+        int interval = params.getInterval();
 
         // Is this supposed to be a difficulty transition point?
-        if ((storedPrev.getHeight() + 1) % interval != 0 &&
-                (storedPrev.getHeight() + 1) != nDifficultySwitchHeight)
+        if ((storedPrev.getHeight() + 1) % interval != 0)
         {
 
             // TODO: Refactor this hack after 0.5 is released and we stop supporting deserialization compatibility.
@@ -837,8 +833,8 @@ public abstract class AbstractBlockChain {
         int timespan = (int) (prev.getTimeSeconds() - blockIntervalAgo.getTimeSeconds());
         // Limit the adjustment step.
 
-        int nActualTimespanMax = fNewDifficultyProtocol? (nTargetTimespanCurrent*2) : (nTargetTimespanCurrent*4);
-        int nActualTimespanMin = fNewDifficultyProtocol? (nTargetTimespanCurrent/2) : (nTargetTimespanCurrent/4);
+        int nActualTimespanMax = (nTargetTimespanCurrent*4);
+        int nActualTimespanMin = (nTargetTimespanCurrent/4);
 
         //new for v1.0 - POSSIBLE BUG in Franko client   - this is not used
         //if (fInflationFixProtocol){
