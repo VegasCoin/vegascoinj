@@ -15,7 +15,8 @@ public final class ServerState {
     /**
      * <code>repeated .paymentchannels.StoredServerPaymentChannel channels = 1;</code>
      */
-    java.util.List<com.google.bitcoin.protocols.channels.ServerState.StoredServerPaymentChannel>
+
+    java.util.List<com.google.bitcoin.protocols.channels.ServerState.StoredServerPaymentChannel> 
         getChannelsList();
     /**
      * <code>repeated .paymentchannels.StoredServerPaymentChannel channels = 1;</code>

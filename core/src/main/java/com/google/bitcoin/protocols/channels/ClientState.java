@@ -153,7 +153,7 @@ public final class ClientState {
     /**
      * <code>repeated .paymentchannels.StoredClientPaymentChannel channels = 1;</code>
      */
-    public java.util.List<? extends com.google.bitcoin.protocols.channels.ClientState.StoredClientPaymentChannelOrBuilder>
+   public java.util.List<? extends com.google.bitcoin.protocols.channels.ClientState.StoredClientPaymentChannelOrBuilder>
         getChannelsOrBuilderList() {
       return channels_;
     }
@@ -673,6 +673,7 @@ public final class ClientState {
        * <code>repeated .paymentchannels.StoredClientPaymentChannel channels = 1;</code>
        */
       public java.util.List<com.google.bitcoin.protocols.channels.ClientState.StoredClientPaymentChannel.Builder>
+
            getChannelsBuilderList() {
         return getChannelsFieldBuilder().getBuilderList();
       }

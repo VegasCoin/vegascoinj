@@ -41,7 +41,11 @@ import static com.google.bitcoin.core.Utils.*;
  * the minting of new coins. A Transaction object corresponds to the equivalent in the Bitcoin C++ implementation.</p>
  *
  * <p>Transactions are the fundamental atoms of Bitcoin and have many powerful features. Read
+<<<<<<< HEAD:core/src/main/java/com/google/bitcoin/core/Transaction.java
  * <a href="http://code.google.com/p/frankoj/wiki/WorkingWithTransactions">"Working with transactions"</a> in the
+=======
+ * <a href="http://code.google.com/p/bitcoinj/wiki/WorkingWithTransactions">"Working with transactions"</a> in the
+>>>>>>> upstream/master:core/src/main/java/com/google/bitcoin/core/Transaction.java
  * documentation to learn more about how to use this class.</p>
  *
  * <p>All Bitcoin transactions are at risk of being reversed, though the risk is much less than with traditional payment
@@ -219,7 +223,7 @@ public class Transaction extends ChildMessage implements Serializable {
         // This is tested in WalletTest.
         BigInteger v = BigInteger.ZERO;
         for (TransactionOutput o : outputs) {
-            if (!o.isMine(wallet)) continue;
+            if (!o.isMineOrWatched(wallet)) continue;
             if (!includeSpent && !o.isAvailableForSpending()) continue;
             v = v.add(o.getValue());
         }
@@ -234,7 +238,7 @@ public class Transaction extends ChildMessage implements Serializable {
         boolean isActuallySpent = true;
         for (TransactionOutput o : outputs) {
             if (o.isAvailableForSpending()) {
-                if (o.isMine(wallet)) isActuallySpent = false;
+                if (o.isMineOrWatched(wallet)) isActuallySpent = false;
                 if (o.getSpentBy() != null) {
                     log.error("isAvailableForSpending != spentBy");
                     return false;
@@ -340,7 +344,7 @@ public class Transaction extends ChildMessage implements Serializable {
                 continue;
             // The connected output may be the change to the sender of a previous input sent to this wallet. In this
             // case we ignore it.
-            if (!connected.isMine(wallet))
+            if (!connected.isMineOrWatched(wallet))
                 continue;
             v = v.add(connected.getValue());
         }
@@ -405,7 +409,7 @@ public class Transaction extends ChildMessage implements Serializable {
     public boolean isEveryOwnedOutputSpent(Wallet wallet) {
         maybeParse();
         for (TransactionOutput output : outputs) {
-            if (output.isAvailableForSpending() && output.isMine(wallet))
+            if (output.isAvailableForSpending() && output.isMineOrWatched(wallet))
                 return false;
         }
         return true;
@@ -795,7 +799,6 @@ public class Transaction extends ChildMessage implements Serializable {
      * @param aesKey The AES key to use to decrypt the key before signing. Null if no decryption is required.
      */
     public synchronized void signInputs(SigHash hashType, Wallet wallet, @Nullable KeyParameter aesKey) throws ScriptException {
-        // TODO: This should be a method of the TransactionInput that (possibly?) operates with a copy of this object.
         Preconditions.checkState(inputs.size() > 0);
         Preconditions.checkState(outputs.size() > 0);
 

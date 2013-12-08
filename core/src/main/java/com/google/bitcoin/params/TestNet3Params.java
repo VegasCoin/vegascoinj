@@ -31,22 +31,26 @@ public class TestNet3Params extends NetworkParameters {
     public TestNet3Params() {
         super();
         id = ID_TESTNET;
+
         // Genesis hash is 000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943
+
         packetMagic = 0x0b110907;
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
         proofOfWorkLimit = Utils.decodeCompactBits(0x1d00ffffL);
-        port = CoinDefinition.TestPort;
+        port = 18333;
         addressHeader = CoinDefinition.testnetAddressHeader;
-        acceptableAddressCodes = new int[] {CoinDefinition.testnetAddressHeader};
+        p2shHeader = CoinDefinition.testnetp2shHeader;
+        acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         dumpedPrivateKeyHeader = 128 + CoinDefinition.testnetAddressHeader;
         genesisBlock.setTime(CoinDefinition.testnetGenesisBlockTime);
         genesisBlock.setDifficultyTarget(CoinDefinition.testnetGenesisBlockDifficultyTarget);
         genesisBlock.setNonce(CoinDefinition.testnetGenesisBlockNonce);
-        spendableCoinbaseDepth = CoinDefinition.spendableCoinbaseDepth;
+        spendableCoinbaseDepth = 100;
         subsidyDecreaseBlockCount = CoinDefinition.subsidyDecreaseBlockCount;
         String genesisHash = genesisBlock.getHashAsString();
-        checkState(genesisHash.equals(CoinDefinition.testnetGenesisHash));
+        if(CoinDefinition.supportsTestNet)
+            checkState(genesisHash.equals(CoinDefinition.testnetGenesisHash));
         alertSigningKey = Hex.decode(CoinDefinition.TESTNET_SATOSHI_KEY);
 
         dnsSeeds = CoinDefinition.dnsSeeds;

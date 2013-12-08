@@ -33,14 +33,18 @@ public class TestWithPeerGroup extends TestWithNetworkConnections {
     protected PeerGroup peerGroup;
 
     protected VersionMessage remoteVersionMessage;
+    private ClientBootstrap bootstrap;
 
     public void setUp(BlockStore blockStore) throws Exception {
         super.setUp(blockStore);
 
         remoteVersionMessage = new VersionMessage(unitTestParams, 1);
         remoteVersionMessage.clientVersion = FilteredBlock.MIN_PROTOCOL_VERSION;
+        initPeerGroup();
+    }
         
-        ClientBootstrap bootstrap = new ClientBootstrap(new ChannelFactory() {
+    protected void initPeerGroup() {
+        bootstrap = new ClientBootstrap(new ChannelFactory() {
             public void releaseExternalResources() {}
             public Channel newChannel(ChannelPipeline pipeline) {
                 ChannelSink sink = new FakeChannelSink();
