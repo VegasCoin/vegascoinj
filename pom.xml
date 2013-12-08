@@ -18,7 +18,7 @@
   <url>https://github.com/HashEngineering/frankoj</url>
 
   <ciManagement>
-    <url>http://ci.frankoj.org/</url>
+    <url>http://ci.bitcoinj.org/</url>
   </ciManagement>
 
   <licenses>
@@ -45,7 +45,7 @@
   <distributionManagement>
     <repository>
         <id>frankoj-distribution</id>
-        <url>https://distribution.frankoj.googlecode.com/git/releases</url>
+        <url>https://distribution.bitcoinj.googlecode.com/git/releases</url>
     </repository>
   </distributionManagement>
 
