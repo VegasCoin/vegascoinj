@@ -31,11 +31,7 @@ public class BuildCheckpoints {
         // Sorted map of UNIX time of block to StoredBlock object.
         final TreeMap<Integer, StoredBlock> checkpoints = new TreeMap<Integer, StoredBlock>();
 
-<<<<<<< HEAD:tools/src/main/java/com/google/bitcoin/tools/BuildCheckpoints.java
-        // Configure frankoj to fetch only headers, not save them to disk, connect to a local fully synced/validated
-=======
         // Configure bitcoinj to fetch only headers, not save them to disk, connect to a local fully synced/validated
->>>>>>> upstream/master:tools/src/main/java/com/google/bitcoin/tools/BuildCheckpoints.java
         // node and to save block headers that are on interval boundaries, as long as they are <1 month old.
         final BlockStore store = new MemoryBlockStore(params);
         final BlockChain chain = new BlockChain(params, store);

@@ -50,11 +50,11 @@ public class CoinDefinition {
         public static final int MAX_MONEY = 11235813;                 //main.h:  MAX_MONEY
         public static final String MAX_MONEY_STRING = "11235813";     //main.h:  MAX_MONEY
 
-        public static final BigInteger DEFAULT_MIN_TX_FEE = BigInteger.valueOf(10000);   // MIN_TX_FEE
-        public static final BigInteger DUST_LIMIT = Utils.toNanoCoins("0.00001"); //main.h DUST_SOFT_LIMIT        0.00001 coins
-        public static final BigInteger DUST_HARD_LIMIT = Utils.toNanoCoins("0.000001"); //main.h DUST_HARD_LIMIT        0.000001 coins
+        public static final BigInteger DEFAULT_MIN_TX_FEE = BigInteger.valueOf(100);   // MIN_TX_FEE
+        public static final BigInteger DUST_LIMIT =      Utils.toNanoCoins("0.00000100"); //main.h DUST_SOFT_LIMIT        0.00001 coins
+        public static final BigInteger DUST_HARD_LIMIT = Utils.toNanoCoins("0.00000010"); //main.h DUST_HARD_LIMIT        0.000001 coins
 
-        public static final int PROTOCOL_VERSION = 70002;//70002;          //version.h PROTOCOL_VERSION
+        public static final int PROTOCOL_VERSION = 70002;          //version.h PROTOCOL_VERSION
         public static final int MIN_PROTOCOL_VERSION = 209;        //version.h MIN_PROTO_VERSION
 
         public static final boolean supportsBloomFiltering = false; //Requires PROTOCOL_VERSION 70000 in the client
@@ -82,11 +82,13 @@ public class CoinDefinition {
 
         //net.cpp strDNSSeed
         static public String[] dnsSeeds = new String[] {
-                "dnsseed.frankos.org", // US-EAST
-                "tokyo.briefcaseit.com", //JAPAN,TOKYO
-                "dnsseed.copiamarket.com", //US
-                "frk.dencoinpools.com",//US
-                //"142.11.90.109"
+                //"dnsseed.frankos.org", // US-EAST
+                //"tokyo.briefcaseit.com", //JAPAN,TOKYO
+                //"dnsseed.copiamarket.com", //US
+                //"frk.dencoinpools.com",//US
+                "54.217.71.192",// == crypto-knight
+                "54.193.7.225" //== frankopedia
+
         };
 
         //
