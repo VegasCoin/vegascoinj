@@ -31,6 +31,7 @@ public class TestNet2Params extends NetworkParameters {
         super();
         id = ID_TESTNET;
         packetMagic = 0xfabfb5daL;
+
         port = CoinDefinition.TestPort;
         addressHeader = CoinDefinition.testnetAddressHeader;
         p2shHeader = CoinDefinition.testnetp2shHeader;
@@ -39,6 +40,7 @@ public class TestNet2Params extends NetworkParameters {
         targetTimespan = TARGET_TIMESPAN;
         proofOfWorkLimit = CoinDefinition.proofOfWorkLimit;
         dumpedPrivateKeyHeader = 128 + CoinDefinition.testnetAddressHeader;
+
         genesisBlock.setTime(1296688602L);
         genesisBlock.setDifficultyTarget(0x1d07fff8L);
         genesisBlock.setNonce(384568319);

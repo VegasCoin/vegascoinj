@@ -101,7 +101,7 @@ public class Script {
     }
 
     /**
-     * Returns the program opcodes as a string, for example "[1234] DUP HAHS160"
+     * Returns the program opcodes as a string, for example "[1234] DUP HASH160"
      */
     public String toString() {
         StringBuilder buf = new StringBuilder();
@@ -117,11 +117,8 @@ public class Script {
             }
         }
 
-        if (creationTimeSeconds != 0) {
-            buf.append(" timestamp:").append(creationTimeSeconds);
-        }
+        return buf.toString().trim();
 
-        return buf.toString();
     }
 
     /** Returns the serialized program as a newly created byte array. */
@@ -281,11 +278,14 @@ public class Script {
 
     /**
      * Gets the destination address from this script, if it's in the required form (see getPubKey).
-     *
-     * @throws ScriptException
      */
     public Address getToAddress(NetworkParameters params) throws ScriptException {
-        return new Address(params, getPubKeyHash());
+        if (isSentToAddress())
+            return new Address(params, getPubKeyHash());
+        else if (isSentToP2SH())
+            return Address.fromP2SHScript(params, this);
+        else
+            throw new ScriptException("Cannot cast this script to a pay-to-address type");
     }
 
     ////////////////////// Interface for writing scripts from scratch ////////////////////////////////

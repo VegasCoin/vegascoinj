@@ -20,6 +20,7 @@ public class CoinDefinition {
         public static final String coinURIScheme = "franko";
         public static final String cryptsyMarketId = "33";
         public static final String cryptsyMarketCurrency = "BTC";
+        public static final String alternateExchangeInfo = "http://www.frankos.org/coin_api.php?coin_id=33";
 
 
         public static final String BLOCKEXPLORER_BASE_URL_PROD = "http://frk.cryptocoinexplorer.com/";
@@ -160,9 +161,4 @@ public class CoinDefinition {
             checkpoints.put( 216802, new Sha256Hash("c946c4bdb51a240a103059f69112f301995e3a293044d3a4eff8d4c95cb0a5e1"));
             checkpoints.put( 219638, new Sha256Hash("35fcdaff88c5b989895047f2be66948618feec9ceefaa947341c4f58c55d9362"));
         }
-
-
-
-
-
 }

@@ -164,7 +164,7 @@ public class PaymentChannelClient implements IPaymentChannelClient {
                 new ECKey(null, initiate.getMultisigKey().toByteArray()),
                 contractValue, initiate.getExpireTimeSecs());
         try {
-        state.initiate();
+            state.initiate();
         } catch (ValueOutOfRangeException e) {
             log.error("Value out of range when trying to initiate", e);
             errorBuilder.setCode(Protos.Error.ErrorCode.CHANNEL_VALUE_TOO_LARGE);

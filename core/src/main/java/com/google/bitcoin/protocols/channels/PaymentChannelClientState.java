@@ -235,7 +235,8 @@ public class PaymentChannelClientState {
      * overriding {@link PaymentChannelClientState#editContractSendRequest(com.google.bitcoin.core.Wallet.SendRequest)}.
      * By default unconfirmed coins are allowed to be used, as for micropayments the risk should be relatively low.
      *
-     * @throws ValueOutOfRangeException If the value being used cannot be afforded or is too small to be accepted by the network
+     * @throws ValueOutOfRangeException if the value being used is too small to be accepted by the network
+     * @throws InsufficientMoneyException if the wallet doesn't contain enough balance to initiate
      */
     public synchronized void initiate() throws ValueOutOfRangeException, InsufficientMoneyException {
         final NetworkParameters params = wallet.getParams();

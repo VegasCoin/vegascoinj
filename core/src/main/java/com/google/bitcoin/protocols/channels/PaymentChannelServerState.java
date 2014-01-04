@@ -303,7 +303,7 @@ public class PaymentChannelServerState {
         // was not connected to the peergroup when the contract was broadcast (which may cause issues down the road, and
         // disables our double-spend check next)
         Transaction walletContract = wallet.getTransaction(multisigContract.getHash());
-        checkState(walletContract != null, "Wallet did not contain multisig contract {} after state was marked READY", multisigContract.getHash());
+        checkNotNull(walletContract, "Wallet did not contain multisig contract {} after state was marked READY", multisigContract.getHash());
 
         // Note that we check for DEAD state here, but this test is essentially useless in production because we will
         // miss most double-spends due to bloom filtering right now anyway. This will eventually fixed by network-wide
@@ -360,7 +360,7 @@ public class PaymentChannelServerState {
      * @return a future which completes when the provided multisig contract successfully broadcasts, or throws if the
      *         broadcast fails for some reason. Note that if the network simply rejects the transaction, this future
      *         will never complete, a timeout should be used.
-     * @throws ValueOutOfRangeException If the payment tx would have cost more in fees to spend than it is worth.
+     * @throws InsufficientMoneyException If the payment tx would have cost more in fees to spend than it is worth.
      */
     public synchronized ListenableFuture<Transaction> close() throws InsufficientMoneyException {
         if (storedServerChannel != null) {

@@ -40,7 +40,7 @@ public class Base58Test extends TestCase {
         // test empty encode
         assertEquals("", Base58.encode(new byte[0]));
     }
-    
+
     @Test
     public void testDecode() throws Exception {
         byte[] testbytes = "Hello World".getBytes();
