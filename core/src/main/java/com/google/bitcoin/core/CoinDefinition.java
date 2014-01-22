@@ -106,14 +106,13 @@ public class CoinDefinition {
 
 
 
-        public static int nDifficultySwitchHeight = 476280;
-        public static int nInflationFixHeight = 523800;
+        public static int nDifficultySwitchHeight = 400000;
+
 
         public static final boolean usingNewDifficultyProtocol(int height)
         { return height >= nDifficultySwitchHeight;}
 
-        public static final boolean usingInflationFixProtocol(int height)
-        { return height >= nInflationFixHeight;}
+
 
         //main.cpp GetBlockValue(height, fee)
 
