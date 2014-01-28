@@ -913,10 +913,10 @@ public abstract class AbstractBlockChain {
     private void checkDifficultyTransitions_V2(StoredBlock storedPrev, Block nextBlock) throws BlockStoreException, VerificationException {
         final long      	BlocksTargetSpacing			= 30; // 30 seconds
         int         		TimeDaySeconds				= 60 * 60 * 24;
-        long				PastSecondsMin				= TimeDaySeconds / 10;
+        long				PastSecondsMin				= TimeDaySeconds / 100;
         long				PastSecondsMax				= TimeDaySeconds * 14 / 100;
-        long				PastBlocksMin				= PastSecondsMin / BlocksTargetSpacing;
-        long				PastBlocksMax				= PastSecondsMax / BlocksTargetSpacing;
+        long				PastBlocksMin				= PastSecondsMin / BlocksTargetSpacing;   //28 blocks
+        long				PastBlocksMax				= PastSecondsMax / BlocksTargetSpacing;   //403 blocks
 
         KimotoGravityWell(storedPrev, nextBlock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
     }
@@ -959,7 +959,7 @@ public abstract class AbstractBlockChain {
             if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
                 PastRateAdjustmentRatio			= (double)PastRateTargetSeconds / PastRateActualSeconds;
             }
-            EventHorizonDeviation			= 1 + (0.7084 * java.lang.Math.pow((Double.valueOf(PastBlocksMass)/Double.valueOf(144)), -1.228));
+            EventHorizonDeviation			= 1 + (0.7084 * java.lang.Math.pow((Double.valueOf(PastBlocksMass)/Double.valueOf(28.2)), -1.228));
             EventHorizonDeviationFast		= EventHorizonDeviation;
             EventHorizonDeviationSlow		= 1 / EventHorizonDeviation;
 

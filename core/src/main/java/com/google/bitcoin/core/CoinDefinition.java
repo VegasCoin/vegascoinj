@@ -34,10 +34,10 @@ public class CoinDefinition {
         };
         public static final CoinHash coinHash = CoinHash.scrypt;
         //Original Values
-        public static final int TARGET_TIMESPAN = (int)(0.25 * 24 * 60 * 60);  // 720 blocks.
+        public static final int TARGET_TIMESPAN = (int)(0.25 * 24 * 60 * 60);  // 720 blocks; 6 hours
         public static final int TARGET_SPACING = (int)(1 * 30);  // 30 seconds per block.
 
-        public static final int INTERVAL = TARGET_TIMESPAN / TARGET_SPACING;
+        public static final int INTERVAL = TARGET_TIMESPAN / TARGET_SPACING;  // 720 blocks
 
         public static final int getInterval(int height, boolean testNet) {
 

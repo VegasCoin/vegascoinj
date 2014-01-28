@@ -36,7 +36,9 @@ public class BuildCheckpoints {
         final BlockStore store = new MemoryBlockStore(params);
         final BlockChain chain = new BlockChain(params, store);
         final PeerGroup peerGroup = new PeerGroup(params, chain);
-        peerGroup.addAddress(InetAddress.getLocalHost());
+        peerGroup.addAddress(/*InetAddress.getLocalHost()*/InetAddress.getByName(CoinDefinition.dnsSeeds[0]));
+        peerGroup.addAddress(/*InetAddress.getLocalHost()*/InetAddress.getByName(CoinDefinition.dnsSeeds[1]));
+        //peerGroup.addAddress(InetAddress.getLocalHost());
         long now = new Date().getTime() / 1000;
         peerGroup.setFastCatchupTimeSecs(now);
 
@@ -46,7 +48,9 @@ public class BuildCheckpoints {
             @Override
             public void notifyNewBestBlock(StoredBlock block) throws VerificationException {
                 int height = block.getHeight();
-                if (height % params.getInterval() == 0 && block.getHeader().getTimeSeconds() <= oneMonthAgo) {
+                if (height % params.getInterval() == 0 &&
+                        block.getHeader().getTimeSeconds() <= oneMonthAgo
+                        && block.getHeight() < CoinDefinition.nDifficultySwitchHeight) {
                     System.out.println(String.format("Checkpointing block %s at height %d",
                             block.getHeader().getHash(), block.getHeight()));
                     checkpoints.put(height, block);
