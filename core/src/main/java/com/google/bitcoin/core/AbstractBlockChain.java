@@ -974,7 +974,9 @@ public abstract class AbstractBlockChain {
             if (BlockReadingPrev == null)
             {
                 //assert(BlockReading);
-                break;
+                //Since we are using the checkpoint system, there may not be enough blocks to do this diff adjust, so skip until we do
+                //break;
+                return;
             }
             BlockReading = BlockReadingPrev;
         }

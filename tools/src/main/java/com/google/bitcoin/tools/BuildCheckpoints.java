@@ -36,13 +36,13 @@ public class BuildCheckpoints {
         final BlockStore store = new MemoryBlockStore(params);
         final BlockChain chain = new BlockChain(params, store);
         final PeerGroup peerGroup = new PeerGroup(params, chain);
-        peerGroup.addAddress(/*InetAddress.getLocalHost()*/InetAddress.getByName(CoinDefinition.dnsSeeds[0]));
-        peerGroup.addAddress(/*InetAddress.getLocalHost()*/InetAddress.getByName(CoinDefinition.dnsSeeds[1]));
-        //peerGroup.addAddress(InetAddress.getLocalHost());
+        //peerGroup.addAddress(/*InetAddress.getLocalHost()*/InetAddress.getByName(CoinDefinition.dnsSeeds[0]));
+        //peerGroup.addAddress(/*InetAddress.getLocalHost()*/InetAddress.getByName(CoinDefinition.dnsSeeds[1]));
+        peerGroup.addAddress(InetAddress.getLocalHost());
         long now = new Date().getTime() / 1000;
         peerGroup.setFastCatchupTimeSecs(now);
 
-        final long oneMonthAgo = now - (86400 * 30);
+        final long oneMonthAgo = now - (86400 * 21); //originally 30
 
         chain.addListener(new AbstractBlockChainListener() {
             @Override
@@ -91,8 +91,8 @@ public class BuildCheckpoints {
         // Sanity check the created file.
         CheckpointManager manager = new CheckpointManager(params, new FileInputStream("checkpoints"));
         checkState(manager.numCheckpoints() == checkpoints.size());
-        StoredBlock test = manager.getCheckpointBefore(1348310800);  // Just after block 200,000
-        checkState(test.getHeight() == 199584);
-        checkState(test.getHeader().getHashAsString().equals("000000000000002e00a243fe9aa49c78f573091d17372c2ae0ae5e0f24f55b52"));
+       // StoredBlock test = manager.getCheckpointBefore(1348310800);  // Just after block 200,000
+       // checkState(test.getHeight() == 199584);
+       // checkState(test.getHeader().getHashAsString().equals("000000000000002e00a243fe9aa49c78f573091d17372c2ae0ae5e0f24f55b52"));
     }
 }
