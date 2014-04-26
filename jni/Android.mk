@@ -26,8 +26,8 @@ include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES := sources/include
 
-LOCAL_MODULE    := kgw
-LOCAL_SRC_FILES := kgw.cpp mini-gmp.c
+LOCAL_MODULE    := fgw
+LOCAL_SRC_FILES := fgw.cpp mini-gmp.c
 
 LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -llog
 

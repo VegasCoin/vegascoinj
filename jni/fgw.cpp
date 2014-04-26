@@ -1,5 +1,14 @@
+/**
+ * Created by HashEngineering on 3/7/14.
+ *
+ * Updated on 4/15/2014 for the Franko Gravity Well (includes a fix for the KGW time warp exploit)
+ *
+ * Native implimentation requires three methods to be called
+ *  - init  - before the loop
+ *  - loop2 - for each iteration of the loop
+ *  - close - at the end of the loop and it returns the calculated difficulty
+ */
 #include <inttypes.h>
-
 #include <jni.h>
 #include "mini-gmp.h"
 #include <math.h>
@@ -170,15 +179,15 @@ void convert_mp2j(JNIEnv* env, mpz_t mvalue, jbyteArray* jvalue)
 
 jbyteArray JNICALL cpda(JNIEnv * env, jclass cls, jint i, jbyteArray diff, jbyteArray past)
 {
-    __android_log_print(ANDROID_LOG_INFO, "cpda", "Initializing with %d, %016x, %016x...", i, diff, past);
+    //__android_log_print(ANDROID_LOG_INFO, "cpda", "Initializing with %d, %016x, %016x...", i, diff, past);
     jint dlen = (env)->GetArrayLength(diff);
-    __android_log_print(ANDROID_LOG_INFO, "cpda", "Diff array len = %d", dlen);
+    //__android_log_print(ANDROID_LOG_INFO, "cpda", "Diff array len = %d", dlen);
     jbyte *d = (env)->GetByteArrayElements(diff, NULL);
-    __android_log_print(ANDROID_LOG_INFO, "cpda", "Diff array ptr = %016x", d);
+    //__android_log_print(ANDROID_LOG_INFO, "cpda", "Diff array ptr = %016x", d);
     jint plen = (env)->GetArrayLength(past);
-    __android_log_print(ANDROID_LOG_INFO, "cpda", "Past array len = %d", plen);
+    //__android_log_print(ANDROID_LOG_INFO, "cpda", "Past array len = %d", plen);
     jbyte *p = (env)->GetByteArrayElements(past, NULL);
-    __android_log_print(ANDROID_LOG_INFO, "cpda", "Past array ptr = %016x", p);
+    //__android_log_print(ANDROID_LOG_INFO, "cpda", "Past array ptr = %016x", p);
 
 	jbyteArray PastDifficultyAverage = NULL;
 	//char result[64+1];
@@ -336,6 +345,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
     uint64 TargetBlocksSpacingSeconds;
     uint64 PastBlocksMin;
     uint64 PastBlocksMax;
+    int64 LatestBlockTime;
 enum KGW_results {
     PROOF_OF_WORK_LIMIT = -2,
 
@@ -348,8 +358,9 @@ enum KGW_results {
 // Initializes global variables above. ^^^
 //
 
-int KimotoGravityWell_init(JNIEnv * env, jclass cls,jlong _TargetBlocksSpacingSeconds, jlong _PastBlocksMin, jlong _PastBlocksMax, double _DeviationDenominator)
+int KimotoGravityWell_init(JNIEnv * env, jclass cls,jlong _TargetBlocksSpacingSeconds, jlong _PastBlocksMin, jlong _PastBlocksMax, double _DeviationDenominator, jlong _LatestBlockTime)
 {
+    //__android_log_print(ANDROID_LOG_INFO, "KimotoGravityWell_init", "init");
     PastBlocksMass				= 0;
     PastRateActualSeconds		= 0;
     PastRateTargetSeconds		= 0;
@@ -359,12 +370,13 @@ int KimotoGravityWell_init(JNIEnv * env, jclass cls,jlong _TargetBlocksSpacingSe
 	PastBlocksMin = _PastBlocksMin;
 	PastBlocksMax = _PastBlocksMax;
 	DeviationDenominator = _DeviationDenominator;
+	LatestBlockTime = _LatestBlockTime;
 
 	mpz_init(PastDifficultyAverage);
 	mpz_init(PastDifficultyAveragePrev);
 	mpz_init(CurrentIteration);
     mpz_init(CurrentDifficulty);
-
+    //__android_log_print(ANDROID_LOG_INFO, "KimotoGravityWell_init", "end");
 	return CONTINUE;
 }
     unsigned int readUint32BE(char * bytes, int offset) {
@@ -483,7 +495,7 @@ int KimotoGravityWell_init(JNIEnv * env, jclass cls,jlong _TargetBlocksSpacingSe
 //
 
 unsigned int static KimotoGravityWell_loop2(JNIEnv * env, jclass cls,jint i, jlong BlockReadingDiff, jint BlockReadingHeight, jlong BlockReadingTime, jlong BlockLastSolvedTime) {
-
+       // __android_log_print(ANDROID_LOG_INFO, "KimotoGravityWell_loop2", "init");
 
 		if (PastBlocksMax > 0 && i > PastBlocksMax) { return STOP; }
 		PastBlocksMass++;
@@ -520,10 +532,22 @@ unsigned int static KimotoGravityWell_loop2(JNIEnv * env, jclass cls,jint i, jlo
 		//PastDifficultyAveragePrev = PastDifficultyAverage;
 		mpz_set(PastDifficultyAveragePrev, PastDifficultyAverage);
 
+		if (BlockReadingHeight > 646120 && LatestBlockTime < BlockReadingTime) {
+         					//eliminates the ability to go back in time
+         	LatestBlockTime = BlockReadingTime;
+        }
+
 		PastRateActualSeconds			= BlockLastSolvedTime - BlockReadingTime;
 		PastRateTargetSeconds			= TargetBlocksSpacingSeconds * PastBlocksMass;
 		PastRateAdjustmentRatio			= double(1);
-		if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
+		if (BlockReadingHeight > 646120) {
+            //this should slow down the upward difficulty change
+            if (PastRateActualSeconds < 5) { PastRateActualSeconds = 5; }
+        }
+        else {
+            if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
+        }
+
 		if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
 		PastRateAdjustmentRatio			= double(PastRateTargetSeconds) / double(PastRateActualSeconds);
 		}
@@ -534,6 +558,7 @@ unsigned int static KimotoGravityWell_loop2(JNIEnv * env, jclass cls,jint i, jlo
 		if (PastBlocksMass >= PastBlocksMin) {
         			if ((PastRateAdjustmentRatio <= EventHorizonDeviationSlow) || (PastRateAdjustmentRatio >= EventHorizonDeviationFast)) { return STOP; }
         		}
+        //__android_log_print(ANDROID_LOG_INFO, "KimotoGravityWell_loop2", "end");
         return CONTINUE;
 }
 //
@@ -587,6 +612,9 @@ unsigned int static KimotoGravityWell_loop(JNIEnv * env, jclass cls,jint i, jbyt
 		if (PastBlocksMass >= PastBlocksMin) {
         			if ((PastRateAdjustmentRatio <= EventHorizonDeviationSlow) || (PastRateAdjustmentRatio >= EventHorizonDeviationFast)) { return STOP; }
         		}
+
+        //__android_log_print(ANDROID_LOG_INFO, "KimotoGravityWell_loop", "end");
+
         return CONTINUE;
 }
 
@@ -595,6 +623,7 @@ unsigned int static KimotoGravityWell_loop(JNIEnv * env, jclass cls,jint i, jbyt
 //
 jbyteArray KimotoGravityWell_close(JNIEnv * env, jclass cls)
 {
+   // __android_log_print(ANDROID_LOG_INFO, "KimotoGravityWell_close", "init");
 	mpz_t bnNew;
 	mpz_init_set(bnNew, PastDifficultyAverage);
 
@@ -622,7 +651,7 @@ jbyteArray KimotoGravityWell_close(JNIEnv * env, jclass cls)
 
         mpz_clear(CurrentIteration);
         mpz_clear(CurrentDifficulty);
-
+        // __android_log_print(ANDROID_LOG_INFO, "KimotoGravityWell_close", "end");
 		return result;
 	}
 	return NULL;
@@ -632,8 +661,8 @@ static const JNINativeMethod methods[] = {
     //{ "calculatePastDifficultyAverage2", "(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;", (void *)calculatePastDifficultyAverage2  }
     //{ "cpda", "(I[B[B)[B", (void *)cpda  },
     { "KimotoGravityWell_close", "()[B", (void*)KimotoGravityWell_close},
-    { "KimotoGravityWell_init", "(JJJD)I", (void*)KimotoGravityWell_init},
-    { "KimotoGravityWell_loop", "(I[BIJJ)I", (void*)KimotoGravityWell_loop},
+    { "KimotoGravityWell_init", "(JJJDJ)I", (void*)KimotoGravityWell_init},
+    //{ "KimotoGravityWell_loop", "(I[BIJJ)I", (void*)KimotoGravityWell_loop},
     { "KimotoGravityWell_loop2", "(IJIJJ)I", (void*)KimotoGravityWell_loop2},
 
 
@@ -641,13 +670,14 @@ static const JNINativeMethod methods[] = {
 
 jint JNI_OnLoad(JavaVM *vm, void *reserved) {
     JNIEnv *env;
-
+    //__android_log_print(ANDROID_LOG_INFO, "JNI_OnLoad", "init");
     if ((vm)->GetEnv((void **) &env, JNI_VERSION_1_6) != JNI_OK) {
         return -1;
     }
 
-    jclass cls = (env)->FindClass("hashengineering/difficulty/KimotoGravityWell/kgw");
-    int r = (env)->RegisterNatives(cls, methods, 4);
-
+    jclass cls = (env)->FindClass("hashengineering/difficulty/FrankoGravityWell/fgw");
+    //__android_log_print(ANDROID_LOG_INFO, "JNI_OnLoad", "FindClass");
+    int r = (env)->RegisterNatives(cls, methods, 3);
+    //__android_log_print(ANDROID_LOG_INFO, "JNI_OnLoad", "RegisterNatives");
     return (r == JNI_OK) ? JNI_VERSION_1_6 : -1;
 }
