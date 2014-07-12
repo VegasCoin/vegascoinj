@@ -72,7 +72,7 @@ public class Main extends Application {
         // Make log output concise.
         BriefLogFormatter.init();
 <<<<<<< HEAD
-        // Tell frankoj to run event handlers on the JavaFX UI thread. This keeps things simple and means
+        // Tell vegasj to run event handlers on the JavaFX UI thread. This keeps things simple and means
 =======
         // Tell bitcoinj to run event handlers on the JavaFX UI thread. This keeps things simple and means
 >>>>>>> upstream/master

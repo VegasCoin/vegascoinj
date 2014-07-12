@@ -80,11 +80,7 @@ public class ForwardingService {
         kit.wallet().addEventListener(new AbstractWalletEventListener() {
             @Override
             public void onCoinsReceived(Wallet w, Transaction tx, BigInteger prevBalance, BigInteger newBalance) {
-<<<<<<< HEAD:examples/src/main/java/com/google/bitcoin/examples/ForwardingService.java
-                // Runs in the dedicated "user thread" (see frankoj docs for more info on this).
-=======
                 // Runs in the dedicated "user thread" (see bitcoinj docs for more info on this).
->>>>>>> upstream/master:examples/src/main/java/com/google/bitcoin/examples/ForwardingService.java
                 //
                 // The transaction "tx" can either be pending, or included into a block (we didn't see the broadcast).
                 BigInteger value = tx.getValueSentToMe(w);

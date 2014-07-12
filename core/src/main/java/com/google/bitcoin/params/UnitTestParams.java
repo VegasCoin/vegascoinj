@@ -24,7 +24,7 @@ import java.math.BigInteger;
 
 /**
 <<<<<<< HEAD:core/src/main/java/com/google/bitcoin/params/UnitTestParams.java
- * Network parameters used by the frankoj unit tests (and potentially your own). This lets you solve a block using
+ * Network parameters used by the vegasj unit tests (and potentially your own). This lets you solve a block using
 =======
  * Network parameters used by the bitcoinj unit tests (and potentially your own). This lets you solve a block using
 >>>>>>> upstream/master:core/src/main/java/com/google/bitcoin/params/UnitTestParams.java

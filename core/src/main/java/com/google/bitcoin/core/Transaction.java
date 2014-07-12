@@ -42,7 +42,7 @@ import static com.google.common.base.Preconditions.*;
  *
  * <p>Transactions are the fundamental atoms of Bitcoin and have many powerful features. Read
 <<<<<<< HEAD:core/src/main/java/com/google/bitcoin/core/Transaction.java
- * <a href="http://code.google.com/p/frankoj/wiki/WorkingWithTransactions">"Working with transactions"</a> in the
+ * <a href="http://code.google.com/p/vegasj/wiki/WorkingWithTransactions">"Working with transactions"</a> in the
 =======
  * <a href="http://code.google.com/p/bitcoinj/wiki/WorkingWithTransactions">"Working with transactions"</a> in the
 >>>>>>> upstream/master:core/src/main/java/com/google/bitcoin/core/Transaction.java

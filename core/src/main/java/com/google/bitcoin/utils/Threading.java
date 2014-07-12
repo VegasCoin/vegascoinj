@@ -65,7 +65,7 @@ public class Threading {
     public static void waitForUserCode() {
         // If this assert fires it means you have a bug in your code - you can't call this method inside your own
         // event handlers because it would never return. If you aren't calling this method explicitly, then that
-        // means there's a bug in frankoj.
+        // means there's a bug in vegasj.
         if (vUserThread != null) {
             checkState(vUserThread.get() != null && vUserThread.get() != Thread.currentThread(),
                     "waitForUserCode() run on user code thread would deadlock.");

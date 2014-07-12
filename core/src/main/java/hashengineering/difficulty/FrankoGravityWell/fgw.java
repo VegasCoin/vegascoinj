@@ -1,4 +1,4 @@
-package hashengineering.difficulty.FrankoGravityWell;
+package hashengineering.difficulty.VegasGravityWell;
 
 import java.lang.UnsatisfiedLinkError;
 import org.slf4j.Logger;
@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by HashEngineering on 3/7/14.
  *
- * Updated on 4/15/2014 for the Franko Gravity Well (includes a fix for the KGW time warp exploit)
+ * Updated on 4/15/2014 for the Vegas Gravity Well (includes a fix for the KGW time warp exploit)
  *
  * Native implimentation requires three methods to be called
  *  - init  - before the loop

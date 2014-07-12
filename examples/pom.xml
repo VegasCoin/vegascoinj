@@ -20,20 +20,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.google</groupId>
-        <artifactId>frankoj-parent</artifactId>
+        <artifactId>vegasj-parent</artifactId>
         <version>0.11</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>frankoj-examples</artifactId>
+    <artifactId>vegasj-examples</artifactId>
 
-    <name>frankoj Examples</name>
-    <description>A collection of examples using the frankoj library</description>
+    <name>vegasj Examples</name>
+    <description>A collection of examples using the vegasj library</description>
 
     <dependencies>
         <dependency>
             <groupId>com.google</groupId>
-            <artifactId>frankoj</artifactId>
+            <artifactId>vegasj</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>

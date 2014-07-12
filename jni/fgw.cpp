@@ -1,7 +1,7 @@
 /**
  * Created by HashEngineering on 3/7/14.
  *
- * Updated on 4/15/2014 for the Franko Gravity Well (includes a fix for the KGW time warp exploit)
+ * Updated on 4/15/2014 for the Vegas Gravity Well (includes a fix for the KGW time warp exploit)
  *
  * Native implimentation requires three methods to be called
  *  - init  - before the loop
@@ -675,7 +675,7 @@ jint JNI_OnLoad(JavaVM *vm, void *reserved) {
         return -1;
     }
 
-    jclass cls = (env)->FindClass("hashengineering/difficulty/FrankoGravityWell/fgw");
+    jclass cls = (env)->FindClass("hashengineering/difficulty/VegasGravityWell/fgw");
     //__android_log_print(ANDROID_LOG_INFO, "JNI_OnLoad", "FindClass");
     int r = (env)->RegisterNatives(cls, methods, 3);
     //__android_log_print(ANDROID_LOG_INFO, "JNI_OnLoad", "RegisterNatives");

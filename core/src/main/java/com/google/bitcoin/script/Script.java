@@ -454,7 +454,7 @@ public class Script {
      * logic is defined by <a href="https://en.bitcoin.it/wiki/BIP_0016">BIP 16</a>.</p>
      *
 <<<<<<< HEAD:core/src/main/java/com/google/bitcoin/script/Script.java
-     * <p>frankoj does not support creation of P2SH transactions today. The goal of P2SH is to allow short addresses
+     * <p>vegasj does not support creation of P2SH transactions today. The goal of P2SH is to allow short addresses
 =======
      * <p>bitcoinj does not support creation of P2SH transactions today. The goal of P2SH is to allow short addresses
 >>>>>>> upstream/master:core/src/main/java/com/google/bitcoin/script/Script.java

@@ -24,7 +24,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
-import hashengineering.difficulty.FrankoGravityWell.fgw;
+import hashengineering.difficulty.VegasGravityWell.fgw;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

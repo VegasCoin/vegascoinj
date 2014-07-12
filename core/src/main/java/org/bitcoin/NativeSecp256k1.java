@@ -28,7 +28,7 @@ import com.google.common.base.Preconditions;
  * <p>You can find an example library that can be used for this at https://github.com/sipa/secp256k1</p>
  *
 <<<<<<< HEAD:core/src/main/java/org/bitcoin/NativeSecp256k1.java
- * <p>To build secp256k1 for use with frankoj, run `./configure` and `make libjavasecp256k1.so` then copy
+ * <p>To build secp256k1 for use with vegasj, run `./configure` and `make libjavasecp256k1.so` then copy
 =======
  * <p>To build secp256k1 for use with bitcoinj, run `./configure` and `make libjavasecp256k1.so` then copy
 >>>>>>> upstream/master:core/src/main/java/org/bitcoin/NativeSecp256k1.java

@@ -81,14 +81,14 @@ import static com.google.common.base.Preconditions.*;
  * of the Bitcoin protocol.</p>
  *
 <<<<<<< HEAD:core/src/main/java/com/google/bitcoin/core/Wallet.java
- * <p>To learn more about this class, read <b><a href="http://code.google.com/p/frankoj/wiki/WorkingWithTheWallet">
+ * <p>To learn more about this class, read <b><a href="http://code.google.com/p/vegasj/wiki/WorkingWithTheWallet">
  *     working with the wallet.</a></b></p>
  *
  * <p>To fill up a Wallet with transactions, you need to use it in combination with a {@link BlockChain} and various
- * other objects, see the <a href="http://code.google.com/p/frankoj/wiki/GettingStarted">Getting started</a> tutorial
+ * other objects, see the <a href="http://code.google.com/p/vegasj/wiki/GettingStarted">Getting started</a> tutorial
  * on the website to learn more about how to set everything up.</p>
  *
- * <p>Wallets can be serialized using either Java serialization - this is not compatible across versions of frankoj,
+ * <p>Wallets can be serialized using either Java serialization - this is not compatible across versions of vegasj,
 =======
  * <p>To learn more about this class, read <b><a href="http://code.google.com/p/bitcoinj/wiki/WorkingWithTheWallet">
  *     working with the wallet.</a></b></p>

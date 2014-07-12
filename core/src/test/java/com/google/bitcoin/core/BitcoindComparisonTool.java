@@ -32,8 +32,8 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * A tool for comparing the blocks which are accepted/rejected by bitcoind/frankoj
- * It is designed to run as a testnet-in-a-box network between a single bitcoind node and frankoj
+ * A tool for comparing the blocks which are accepted/rejected by bitcoind/vegasj
+ * It is designed to run as a testnet-in-a-box network between a single bitcoind node and vegasj
  * It is not an automated unit-test because it requires a bit more set-up...read comments below
  */
 public class BitcoindComparisonTool {

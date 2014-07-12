@@ -40,7 +40,7 @@ public class SendMoneyController {
             sendResult = Main.bitcoin.wallet().sendCoins(req);
             if (sendResult == null) {
 <<<<<<< HEAD
-                // We couldn't empty the wallet for some reason. TODO: When frankoj issue 425 is fixed, be more helpful
+                // We couldn't empty the wallet for some reason. TODO: When vegasj issue 425 is fixed, be more helpful
 =======
                 // We couldn't empty the wallet for some reason. TODO: When bitcoinj issue 425 is fixed, be more helpful
 >>>>>>> upstream/master
