@@ -81,13 +81,12 @@ public class CoinDefinition {
 
         //net.cpp strDNSSeed
         static public String[] dnsSeeds = new String[] {
-                "192.168.0.5", // US
-                //"node.vegascoin.co", // US
-                //"jp.nodes.vegascoin.co", // JAPAN
-                //"cn.nodes.vegascoin.co", // China
-                //"eu.nodes.vegascoin.co", // Europe
-                //"0.nodes.vegascoin.co",
-                //"1.nodes.vegascoin.co"
+                "node.vegascoin.co", // US
+                "jp.nodes.vegascoin.co", // JAPAN
+                "cn.nodes.vegascoin.co", // China
+                "eu.nodes.vegascoin.co", // Europe
+                "0.nodes.vegascoin.co",
+                "1.nodes.vegascoin.co"
         };
 
         //
