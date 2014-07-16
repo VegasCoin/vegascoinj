@@ -127,11 +127,11 @@ public class CoinDefinition {
         public static final String SATOSHI_KEY = "";
         public static final String TESTNET_SATOSHI_KEY = "";
         /** The string returned by getId() for the main, production network where people trade things. */
-        public static final String ID_MAINNET = "co.vegascoin.production";
+        public static final String ID_MAINNET = "org.vegascoin.production";
         /** The string returned by getId() for the testnet. */
-        public static final String ID_TESTNET = "co.vegascoin.test";
+        public static final String ID_TESTNET = "org.vegascoin.test";
         /** Unit test network. */
-        public static final String ID_UNITTESTNET = "co.vegascoin.unittest";
+        public static final String ID_UNITTESTNET = "org.vegascoin.unittest";
 
         //checkpoints.cpp Checkpoints::mapCheckpoints
         public static void initCheckpoints(Map<Integer, Sha256Hash> checkpoints)
