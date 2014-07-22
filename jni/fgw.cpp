@@ -532,21 +532,12 @@ unsigned int static KimotoGravityWell_loop2(JNIEnv * env, jclass cls,jint i, jlo
 		//PastDifficultyAveragePrev = PastDifficultyAverage;
 		mpz_set(PastDifficultyAveragePrev, PastDifficultyAverage);
 
-		if (BlockReadingHeight > 646120 && LatestBlockTime < BlockReadingTime) {
-         					//eliminates the ability to go back in time
-         	LatestBlockTime = BlockReadingTime;
-        }
 
 		PastRateActualSeconds			= BlockLastSolvedTime - BlockReadingTime;
 		PastRateTargetSeconds			= TargetBlocksSpacingSeconds * PastBlocksMass;
 		PastRateAdjustmentRatio			= double(1);
-		if (BlockReadingHeight > 646120) {
-            //this should slow down the upward difficulty change
-            if (PastRateActualSeconds < 5) { PastRateActualSeconds = 5; }
-        }
-        else {
-            if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
-        }
+
+        if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
 
 		if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
 		PastRateAdjustmentRatio			= double(PastRateTargetSeconds) / double(PastRateActualSeconds);
@@ -675,7 +666,7 @@ jint JNI_OnLoad(JavaVM *vm, void *reserved) {
         return -1;
     }
 
-    jclass cls = (env)->FindClass("hashengineering/difficulty/VegasGravityWell/fgw");
+    jclass cls = (env)->FindClass("hashengineering/difficulty/VegasGravityWell/vgw");
     //__android_log_print(ANDROID_LOG_INFO, "JNI_OnLoad", "FindClass");
     int r = (env)->RegisterNatives(cls, methods, 3);
     //__android_log_print(ANDROID_LOG_INFO, "JNI_OnLoad", "RegisterNatives");
