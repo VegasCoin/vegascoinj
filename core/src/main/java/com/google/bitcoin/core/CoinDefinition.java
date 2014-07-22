@@ -24,7 +24,7 @@ public class CoinDefinition {
         public static final String BLOCKEXPLORER_BASE_URL_PROD = "http://explorer.vegascoin.co/";
         public static final String BLOCKEXPLORER_BASE_URL_TEST = "http://explorer.vegascoin.co/";
 
-        public static final String DONATION_ADDRESS = "F85ytB5qH87aHskpauQi6YWdRZPQgNubX4";  //HashEngineering donation VGC address
+        public static final String DONATION_ADDRESS = "QXjCSTrg3miMVq9ArFgTVykrVYtfVWbUht";  //HashEngineering donation VGC address
 
         enum CoinHash {
             SHA256,
