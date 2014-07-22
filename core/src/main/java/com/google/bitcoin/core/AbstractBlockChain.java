@@ -24,7 +24,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
-import hashengineering.difficulty.VegasGravityWell.fgw;
+import hashengineering.difficulty.VegasGravityWell.vgw;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -800,7 +800,7 @@ public abstract class AbstractBlockChain {
 
         int DiffMode = 1;
         if (params.getId().equals(NetworkParameters.ID_TESTNET)) {
-            if (storedPrev.getHeight()+1 >= 50) { DiffMode = 2; }
+            if (storedPrev.getHeight()+1 >= 20) { DiffMode = 2; }
         }
         else {
             if (storedPrev.getHeight()+1 >= 25000) { DiffMode = 2; }
@@ -811,6 +811,8 @@ public abstract class AbstractBlockChain {
 
         checkDifficultyTransitions_V2(storedPrev, nextBlock);
     }
+    static final int COINFIX1_BLOCK = 15000;
+    static final int reTargetHistoryFact = 4;
     private void checkDifficultyTransitions_V1(StoredBlock storedPrev, Block nextBlock) throws BlockStoreException, VerificationException {
         checkState(lock.isLocked());
         Block prev = storedPrev.getHeader();
@@ -846,10 +848,14 @@ public abstract class AbstractBlockChain {
         int goBack = interval - 1;
         if (cursor.getHeight()+1 != interval)
             goBack = interval;
+        if (storedPrev.getHeight() > COINFIX1_BLOCK) {
+            goBack = reTargetHistoryFact * interval;
+        }
 
         for (int i = 0; i < goBack; i++) {
-            if (cursor == null) {
+            if (cursor == null && storedPrev.getHeight() < COINFIX1_BLOCK) {
                 // This should never happen. If it does, it means we are following an incorrect or busted chain.
+                // It also means that the block # may be above 15000 and checkpoints are being used.
                 throw new VerificationException(
                         "Difficulty transition point but we did not find a way back to the genesis block.");
             }
@@ -864,6 +870,13 @@ public abstract class AbstractBlockChain {
 
         Block blockIntervalAgo = cursor.getHeader();
         int timespan = (int) (prev.getTimeSeconds() - blockIntervalAgo.getTimeSeconds());
+
+        if (storedPrev.getHeight() > COINFIX1_BLOCK)
+            // obtain average actual timespan
+            timespan = (int) (prev.getTimeSeconds() - blockIntervalAgo.getTimeSeconds())/reTargetHistoryFact;
+        else
+            timespan = (int) (prev.getTimeSeconds() - blockIntervalAgo.getTimeSeconds());
+
         // Limit the adjustment step.
 
         int nActualTimespanMax = (nTargetTimespanCurrent*4);
@@ -923,7 +936,7 @@ public abstract class AbstractBlockChain {
         long				PastBlocksMin				= PastSecondsMin / BlocksTargetSpacing;   //28 blocks
         long				PastBlocksMax				= PastSecondsMax / BlocksTargetSpacing;   //403 blocks
 
-        if(!fgw.isNativeLibraryLoaded())
+        if(!vgw.isNativeLibraryLoaded())
         //long start = System.currentTimeMillis();
             KimotoGravityWell(storedPrev, nextBlock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
         //long end1 = System.currentTimeMillis();
@@ -987,21 +1000,12 @@ public abstract class AbstractBlockChain {
             PastDifficultyAveragePrev = PastDifficultyAverage;
 
 
-            if (BlockReading.getHeight() > 646120 && LatestBlockTime < BlockReading.getHeader().getTimeSeconds()) {
-            	//eliminates the ability to go back in time
-            	LatestBlockTime = BlockReading.getHeader().getTimeSeconds();
-            }
-
             PastRateActualSeconds			= BlockLastSolved.getHeader().getTimeSeconds() - BlockReading.getHeader().getTimeSeconds();
             PastRateTargetSeconds			= TargetBlocksSpacingSeconds * PastBlocksMass;
             PastRateAdjustmentRatio			= 1.0f;
-            if (BlockReading.getHeight() > 646120){
-                //this should slow down the upward difficulty change
-                if (PastRateActualSeconds < 5) { PastRateActualSeconds = 5; }
-            }
-            else {
-             	if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
-            }
+
+            if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
+
             if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
                 PastRateAdjustmentRatio			= (double)PastRateTargetSeconds / PastRateActualSeconds;
             }
@@ -1156,12 +1160,12 @@ public abstract class AbstractBlockChain {
         //long totalReadtime = 0;
         //long totalBigIntTime = 0;
 
-        int init_result = fgw.KimotoGravityWell_init(TargetBlocksSpacingSeconds, PastBlocksMin, PastBlocksMax, 28.2d, BlockLastSolved.getHeader().getTimeSeconds());
+        int init_result = vgw.KimotoGravityWell_init(TargetBlocksSpacingSeconds, PastBlocksMin, PastBlocksMax, 28.2d, BlockLastSolved.getHeader().getTimeSeconds());
 
 
         for (i = 1; BlockReading != null && BlockReading.getHeight() > 0; i++) {
             //long startLoop = System.currentTimeMillis();
-            int result = fgw.KimotoGravityWell_loop2(i, BlockReading.getHeader().getDifficultyTarget(),BlockReading.getHeight(), BlockReading.getHeader().getTimeSeconds(), BlockLastSolved.getHeader().getTimeSeconds());
+            int result = vgw.KimotoGravityWell_loop2(i, BlockReading.getHeader().getDifficultyTarget(),BlockReading.getHeight(), BlockReading.getHeader().getTimeSeconds(), BlockLastSolved.getHeader().getTimeSeconds());
             //BigInteger diff = BlockReading.getHeader().getDifficultyTargetAsInteger();
             //if(i == 1)
             //    log.info("KGW-N2: difficulty of i=1: " + BlockReading.getHeader().getDifficultyTarget() +"->"+ diff.toString(16));
@@ -1235,7 +1239,7 @@ public abstract class AbstractBlockChain {
             newDifficulty = newDifficulty.divide(BigInteger.valueOf(PastRateTargetSeconds));
         }*/
 
-        BigInteger newDifficulty = new BigInteger(fgw.KimotoGravityWell_close());
+        BigInteger newDifficulty = new BigInteger(vgw.KimotoGravityWell_close());
 
         if (newDifficulty.compareTo(params.getProofOfWorkLimit()) > 0) {
             log.info("Difficulty hit proof of work limit: {}", newDifficulty.toString(16));

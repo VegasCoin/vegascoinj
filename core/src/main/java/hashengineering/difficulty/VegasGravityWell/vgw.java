@@ -13,12 +13,12 @@ import org.slf4j.LoggerFactory;
  *  - loop2 - for each iteration of the loop
  *  - close - at the end of the loop and it returns the calculated difficulty
  */
-public class fgw {
-    private static final Logger log = LoggerFactory.getLogger(fgw.class);
+public class vgw {
+    private static final Logger log = LoggerFactory.getLogger(vgw.class);
     private static boolean native_library_loaded = false;
     static {
         try {
-            System.loadLibrary("fgw");
+            System.loadLibrary("vgw");
             native_library_loaded = true;
         }
         catch(NoSuchMethodError e)
